@@ -44,10 +44,10 @@ int main() {
 }
 ```
 
-<div class="cz-terminal-status"><b>✓</b> hello, world <span>·</span> g++ -std=c++20 <span>·</span> 0.42s</div>
+<div class="cz-terminal-status"><b>✓</b> hello, world <span>·</span> g++ -std=c++20 <span>·</span> 编译通过</div>
 </div>
 <div class="cz-floating cz-floating-note"><strong>最新笔记</strong><span>为什么不直接用模板？</span></div>
-<div class="cz-floating cz-floating-build"><i>✓</i><div><strong>构建通过</strong><span>GitHub Actions · 3m 12s</span></div></div>
+<div class="cz-floating cz-floating-build"><i>✓</i><div><strong>构建通过</strong><span>GitHub Actions · push 后自动发布</span></div></div>
 </div>
 
 :::
