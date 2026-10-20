@@ -4,7 +4,7 @@ project:
   resources:
     - robots.txt
   post-render:
-    - node scripts/add-canonical.mjs
+    - node scripts/post-render.mjs
 
 website:
   title: "橙照"

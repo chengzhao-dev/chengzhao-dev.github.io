@@ -15,7 +15,7 @@ quarto preview      # 本地预览，改文件自动刷新
 quarto render       # 生成静态站点到 _site/
 ```
 
-写页面不需要 Node 或 Python；主题是纯 CSS/SCSS，交互是原生 JavaScript。`quarto render` 最后会运行 `scripts/add-canonical.mjs`（Node），给每页补 canonical 与 `og:url`。
+写页面不需要 Node 或 Python；主题是纯 CSS/SCSS，交互是原生 JavaScript。`quarto render` 最后会运行 `scripts/post-render.mjs`（Node），给每页补 canonical 与 `og:url`，并把 sitemap 里的 `/index.html` 规整为目录 URL。
 
 ## 目录
 
@@ -31,7 +31,7 @@ quarto render       # 生成静态站点到 _site/
 │   └── <slug>/index.qmd        # 每篇笔记
 ├── 404.qmd
 ├── robots.txt
-├── scripts/add-canonical.mjs   # 渲染后补 canonical / og:url
+├── scripts/post-render.mjs     # 补 canonical / og:url，规整 sitemap
 ├── theme/
 │   ├── theme-light.scss        # Bootstrap 变量 + 浅色规则
 │   ├── theme-dark.scss         # 深色规则
@@ -75,10 +75,10 @@ categories: [Quarto, 写作]
 ```yaml
 project:
   post-render:
-    - node scripts/add-canonical.mjs
+    - node scripts/post-render.mjs
 ```
 
-脚本遍历 `_site/**/*.html`，按输出路径计算绝对地址，已有标签不会重复插入。改站点域名时只改 `_quarto.yml` 的 `site-url`，不要改脚本。
+脚本遍历 `_site/**/*.html`，按输出路径计算绝对地址，已有标签不会重复插入；同时把 `sitemap.xml` 里的 `/index.html` 规整为目录 URL。改站点域名时只改 `_quarto.yml` 的 `site-url`，不要改脚本。
 
 ## 发布
 

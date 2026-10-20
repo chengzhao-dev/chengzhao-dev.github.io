@@ -6,7 +6,7 @@
 
 ```bash
 quarto preview       # 本地预览，默认 http://localhost:xxxx
-quarto render        # 构建到 _site/，最后运行 scripts/add-canonical.mjs
+quarto render        # 构建到 _site/，最后运行 scripts/post-render.mjs
 ```
 
 渲染后至少检查：
@@ -44,7 +44,7 @@ quarto render        # 构建到 _site/，最后运行 scripts/add-canonical.mjs
 ## 元数据
 
 - 每页 front matter 必须有非空 `description`；首页和 404 也不能省。
-- canonical 与 `og:url` 由 `scripts/add-canonical.mjs` 在渲染后写入；不要手工编辑 `_site/`。
+- canonical、`og:url` 与 sitemap 的干净 URL 由 `scripts/post-render.mjs` 在渲染后生成；不要手工编辑 `_site/`。
 - 改域名只改 `_quarto.yml` 的 `site-url`，脚本会读取同一份配置。
 
 ## 发布
