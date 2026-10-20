@@ -1,0 +1,735 @@
+/* ============================================================
+   橙照 · 内页
+   项目、笔记列表、文章、关于、404。
+   ============================================================ */
+
+.cz-page {
+  max-width: none;
+}
+
+.cz-page-hero {
+  max-width: 52rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+.cz-page-hero .cz-kicker {
+  margin-bottom: 1rem;
+}
+
+.cz-page-hero h1 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.7rem, 5.4vw, 4.7rem);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.cz-page-note {
+  align-self: end;
+  max-width: 22rem;
+  justify-self: end;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--cz-line);
+  border-radius: var(--cz-radius-sm);
+  background: color-mix(in srgb, var(--cz-surface-solid) 54%, transparent);
+}
+
+.cz-page-note p {
+  margin: 0;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+.cz-page-note .cz-note-label {
+  margin-bottom: 0.45rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cz-page-note strong {
+  color: var(--cz-ink);
+}
+
+.cz-page .cz-about-poster {
+  width: 100%;
+  max-width: 21rem;
+  justify-self: end;
+}
+
+.cz-page-cta {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding: clamp(2rem, 4vw, 3.2rem) 0 0;
+  border-top: 1px solid var(--cz-line-strong);
+}
+
+.cz-page-cta h2 {
+  margin: 0.35rem 0 0.8rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+}
+
+.cz-page-cta > p:not(.cz-kicker) {
+  max-width: 34rem;
+  margin-bottom: 1.4rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.cz-notes-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(1rem, 2vw, 1.8rem);
+  padding: 0.8rem 0.2rem;
+  border-top: 1px solid var(--cz-line-strong);
+  border-bottom: 1px solid var(--cz-line);
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cz-404-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.cz-about-sign {
+  margin-top: 2rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.92rem;
+}
+
+.cz-about-sign a {
+  margin-left: 0.35rem;
+  font-family: var(--cz-font-mono);
+  font-size: 0.76rem;
+}
+
+.cz-principles-page {
+  max-width: 42rem;
+}
+
+.cz-page-lead {
+  max-width: 38rem;
+  margin-bottom: 0;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.8;
+}
+
+.cz-page-hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: none;
+  align-items: end;
+}
+
+/* ---------- 项目页 ---------- */
+
+.cz-project-list {
+  border-top: 1px solid var(--cz-line-strong);
+}
+
+.cz-project {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) 9rem;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.7rem, 3.5vw, 2.6rem) 0;
+  border-bottom: 1px solid var(--cz-line);
+  transition: background 260ms var(--cz-ease), padding 260ms var(--cz-ease);
+}
+
+.cz-project:hover {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--cz-accent-soft) 26%, transparent), transparent 72%);
+}
+
+.cz-project-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.cz-project-no {
+  color: var(--cz-accent);
+  font-family: var(--cz-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.cz-project-state {
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cz-project-main h2 {
+  margin: 0 0 0.55rem;
+  font-family: var(--cz-font-display);
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 540;
+  letter-spacing: -0.025em;
+}
+
+.cz-project-main h2 a {
+  color: var(--cz-ink);
+  text-decoration: none;
+}
+
+.cz-project-main h2 a:hover {
+  color: var(--cz-accent);
+}
+
+.cz-project-main p {
+  max-width: 39rem;
+  margin-bottom: 1rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.cz-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin: 0;
+  font-family: var(--cz-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+}
+
+.cz-project-links a {
+  color: var(--cz-accent-strong);
+  text-decoration: none;
+}
+
+.cz-project-links a:hover {
+  color: var(--cz-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.cz-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cz-tags li {
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--cz-line);
+  border-radius: 999px;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.cz-project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-top: 0.3rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* ---------- Quarto Listing ---------- */
+
+.quarto-listing {
+  margin-top: 0.5rem;
+}
+
+.quarto-listing .list {
+  border-top: 1px solid var(--cz-line-strong);
+}
+
+.quarto-listing .quarto-post {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin: 0;
+  padding: 1.5rem 0.2rem;
+  border-bottom: 1px solid var(--cz-line);
+  transition: padding 240ms var(--cz-ease), background 240ms var(--cz-ease);
+}
+
+.quarto-listing .quarto-post:hover {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--cz-accent-soft) 26%, transparent), transparent 72%);
+}
+
+.quarto-listing .quarto-post .thumbnail {
+  display: none;
+}
+
+.quarto-listing .quarto-post .body {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.quarto-listing .quarto-post .metadata {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.quarto-listing .listing-title {
+  order: 2;
+  margin: 0;
+  font-family: var(--cz-font-display);
+  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  font-weight: 540;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.quarto-listing .listing-title a {
+  color: var(--cz-ink);
+  text-decoration: none;
+}
+
+.quarto-listing .listing-title a:hover {
+  color: var(--cz-accent);
+}
+
+.quarto-listing .metadata {
+  order: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+.quarto-listing .listing-date,
+.quarto-listing .listing-author {
+  color: var(--cz-ink-3);
+}
+
+.quarto-listing .metadata a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.quarto-listing .metadata a:hover {
+  color: var(--cz-accent);
+}
+
+.quarto-listing .listing-description {
+  order: 3;
+  margin: 0.1rem 0 0;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.quarto-listing .listing-categories {
+  order: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.quarto-listing .listing-category {
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--cz-line);
+  border-radius: 999px;
+  color: var(--cz-sage);
+  font-family: var(--cz-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+.quarto-listing .listing-item-img-placeholder {
+  display: none;
+}
+
+.quarto-listing .listing-no-matching {
+  padding: 2rem 0;
+  color: var(--cz-ink-3);
+}
+
+/* 分类筛选与排序控件 */
+
+.quarto-listing-category,
+.listing-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--cz-font-mono);
+  font-size: 0.68rem;
+}
+
+.quarto-listing-category .category,
+.listing-actions-group .form-select {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--cz-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-mono);
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.quarto-listing-category .category:hover,
+.quarto-listing-category .category.active {
+  border-color: var(--cz-accent);
+  background: var(--cz-accent-soft);
+  color: var(--cz-accent-strong);
+}
+
+.quarto-listing-category-title {
+  margin: 2.5rem 0 1rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* 网格型 listing（若页面选择 grid） */
+
+.quarto-grid-item {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--cz-line);
+  border-radius: var(--cz-radius);
+  background: var(--cz-surface);
+  transition: transform 240ms var(--cz-ease), border-color 240ms var(--cz-ease);
+}
+
+.quarto-grid-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--cz-accent);
+}
+
+.quarto-grid-item .card-body {
+  padding: 1.1rem 1.2rem;
+}
+
+.quarto-grid-item .listing-title {
+  font-family: var(--cz-font-display);
+  font-size: 1.15rem;
+  font-weight: 540;
+}
+
+.quarto-grid-item .listing-description {
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.84rem;
+}
+
+/* ---------- 文章页 ---------- */
+
+.quarto-title-block .quarto-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.quarto-title-block .description {
+  margin-top: 0.8rem;
+}
+
+.quarto-document-content .quarto-figure {
+  margin: 2rem 0;
+}
+
+.quarto-document-content img {
+  border-radius: var(--cz-radius-sm);
+}
+
+.quarto-document-content .footnotes {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--cz-line);
+  color: var(--cz-ink-2);
+  font-size: 0.82rem;
+}
+
+.cz-post-end {
+  margin-top: 3.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--cz-line);
+  border-radius: var(--cz-radius);
+  background: color-mix(in srgb, var(--cz-bg-deep) 45%, transparent);
+}
+
+.cz-post-end p {
+  margin-bottom: 0.7rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 0.9rem;
+}
+
+.cz-post-end p:last-child {
+  margin-bottom: 0;
+}
+
+.cz-post-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  font-family: var(--cz-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- 关于页 ---------- */
+
+.cz-about-page {
+  max-width: 56rem;
+}
+
+.cz-about-page .cz-page-hero {
+  max-width: none;
+}
+
+.cz-about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--cz-line);
+}
+
+.cz-about-intro p {
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.cz-about-intro p:first-of-type::first-letter {
+  float: left;
+  margin: 0.12em 0.12em 0 0;
+  color: var(--cz-accent);
+  font-family: var(--cz-font-display);
+  font-size: 3.6em;
+  font-weight: 500;
+  line-height: 0.82;
+}
+
+.cz-facts {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--cz-line);
+  border-radius: var(--cz-radius-sm);
+  background: var(--cz-surface);
+}
+
+.cz-facts h2 {
+  margin: 0 0 0.75rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cz-facts dl {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.cz-facts dt {
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cz-facts dd {
+  margin: 0.12rem 0 0;
+  color: var(--cz-ink);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.cz-story {
+  max-width: var(--cz-reading);
+}
+
+.cz-story h2 {
+  margin-top: 2.8rem;
+}
+
+.cz-timeline {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--cz-line);
+  list-style: none;
+}
+
+.cz-timeline li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1.2rem;
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cz-line);
+}
+
+.cz-timeline-year {
+  color: var(--cz-accent);
+  font-family: var(--cz-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.cz-timeline h3 {
+  margin: 0 0 0.2rem;
+  font-family: var(--cz-font-display);
+  font-size: 1.05rem;
+  font-weight: 540;
+}
+
+.cz-timeline p {
+  margin: 0;
+  color: var(--cz-ink-2);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+/* ---------- 404 ---------- */
+
+.cz-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 58vh;
+  max-width: 44rem;
+}
+
+.cz-404-code {
+  margin-bottom: 0.5rem;
+  color: var(--cz-accent);
+  font-family: var(--cz-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cz-404 h1 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.cz-404 p {
+  max-width: 32rem;
+  margin-bottom: 1.7rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 991.98px) {
+  .cz-page-hero-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .cz-project {
+    grid-template-columns: 4.2rem minmax(0, 1fr);
+  }
+
+  .cz-project-meta {
+    grid-column: 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .cz-about-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .cz-facts {
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cz-project {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+  }
+
+  .cz-project-side {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+
+  .cz-project-meta {
+    grid-column: auto;
+    flex-direction: row;
+  }
+
+  .quarto-listing .quarto-post {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .quarto-listing .metadata {
+    order: 0;
+  }
+
+  .cz-timeline li {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+}

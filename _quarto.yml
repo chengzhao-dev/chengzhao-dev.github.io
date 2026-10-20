@@ -1,0 +1,79 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - robots.txt
+  post-render:
+    - node scripts/add-canonical.mjs
+
+website:
+  title: "橙照"
+  site-url: https://chengzhao-dev.github.io
+  description: "橙照的个人网站：C++ 学习笔记、工程项目，以及把复杂问题拆开、做完整的过程。"
+  favicon: theme/assets/favicon.svg
+  repo-url: https://github.com/chengzhao-dev/chengzhao-dev.github.io
+  repo-actions: [edit, issue]
+  open-graph: true
+  twitter-card: true
+  search:
+    location: navbar
+    type: overlay
+    limit: 20
+  back-to-top-navigation: true
+  reader-mode: false
+  bread-crumbs: false
+  navbar:
+    title: "橙照"
+    logo: theme/assets/brand-mark.svg
+    logo-alt: "橙照的品牌标记：一枚从地平线升起的橙色圆点"
+    background: light
+    pinned: true
+    search: true
+    left:
+      - text: "首页"
+        href: index.qmd
+      - text: "项目"
+        href: projects/index.qmd
+      - text: "笔记"
+        href: notes/index.qmd
+      - text: "关于"
+        href: about/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/chengzhao-dev
+        aria-label: "GitHub：chengzhao-dev"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/theme-light.scss]
+      dark: [cosmo, theme/theme-dark.scss]
+    css:
+      - theme/css/tokens.css
+      - theme/css/base.css
+      - theme/css/navbar.css
+      - theme/css/landing.css
+      - theme/css/pages.css
+      - theme/css/footer.css
+    include-in-header: theme/includes/head.html
+    include-before-body: theme/includes/before-body.html
+    include-after-body:
+      - theme/includes/footer.html
+      - theme/includes/after-body.html
+    toc: true
+    toc-depth: 3
+    toc-title: "本文目录"
+    code-copy: true
+    code-overflow: wrap
+    fig-align: center
+    link-external-newwindow: true
+    link-external-icon: false
+    anchor-sections: false
+    smooth-scroll: true
+    grid:
+      sidebar-width: 230px
+      body-width: 780px
+      margin-width: 260px
+      gutter-width: 2rem
+
+lang: zh-CN

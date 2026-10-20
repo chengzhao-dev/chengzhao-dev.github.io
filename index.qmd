@@ -1,0 +1,300 @@
+---
+description: "橙照的个人网站：写 C++ 与 Python，做小工具，也把踩过的坑整理成可以复现的笔记。"
+pagetitle: "把简单的事做完整"
+page-layout: custom
+toc: false
+---
+
+<main id="quarto-document-content" class="content cz-home-main">
+
+:::: {.cz-home}
+
+::: {.cz-hero}
+
+::: {.cz-hero-copy}
+
+<p class="cz-eyebrow"><span class="cz-pulse" aria-hidden="true"></span> 写代码的人 · C++ / Python / 工具</p>
+<h1 class="cz-hero-title">把复杂的事，<br><em>做简单。</em><br>把简单的事，<span class="cz-mark">做完整。</span></h1>
+<p class="cz-hero-lead">我是橙照。写 C++，也写 Python；做小工具，也把踩过的坑整理成能复现的笔记。这个网站，是我练习「把一件事做完整」的地方。</p>
+<div class="cz-hero-actions">
+<a class="cz-button cz-button-primary" href="projects/">看看我在做什么 <span aria-hidden="true">→</span></a>
+<a class="cz-button cz-button-ghost" href="https://github.com/chengzhao-dev" rel="me noopener">GitHub <span aria-hidden="true">↗</span></a>
+</div>
+<dl class="cz-stats">
+<div><dt>06</dt><dd>个公开项目</dd></div>
+<div><dt>03</dt><dd>篇公开笔记</dd></div>
+<div><dt>2026</dt><dd>开始长期写作</dd></div>
+</dl>
+
+:::
+
+<div class="cz-hero-visual" aria-hidden="true">
+<div class="cz-orbit"><span class="cz-orbit-dot"></span></div>
+<div class="cz-terminal">
+<div class="cz-terminal-bar"><i></i><i></i><i></i><span class="cz-terminal-title">~/chengzhao/hello.cpp</span></div>
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+  std::string name = "world";
+  std::cout << "hello, " << name << '\n';
+  return 0;
+}
+```
+
+<div class="cz-terminal-status"><b>✓</b> hello, world <span>·</span> g++ -std=c++20 <span>·</span> 0.42s</div>
+</div>
+<div class="cz-floating cz-floating-note"><strong>最新笔记</strong><span>为什么不直接用模板？</span></div>
+<div class="cz-floating cz-floating-build"><i>✓</i><div><strong>构建通过</strong><span>GitHub Actions · 3m 12s</span></div></div>
+</div>
+
+:::
+
+<div class="cz-marquee" aria-label="常用的语言与工具">
+<div class="cz-marquee-track">
+<div class="cz-marquee-group"><span>C++20</span><span>CMake</span><span>Python</span><span>Quarto</span><span>GitHub Actions</span><span>Linux</span><span>Neovim</span><span>Git</span><span>Markdown</span><span>WSL2</span><span>Clang</span><span>SQLite</span></div>
+<div class="cz-marquee-group" aria-hidden="true"><span>C++20</span><span>CMake</span><span>Python</span><span>Quarto</span><span>GitHub Actions</span><span>Linux</span><span>Neovim</span><span>Git</span><span>Markdown</span><span>WSL2</span><span>Clang</span><span>SQLite</span></div>
+</div>
+</div>
+
+::: {.cz-section}
+
+::: {.cz-section-head}
+
+<p class="cz-kicker">01 / 项目</p>
+<h2>从问题出发，<br>让每一行代码都有去处。</h2>
+<p class="cz-section-aside">不追求数量。每个项目都尽量有清楚的边界、能运行的代码，以及一条别人可以照着走的路。</p>
+<a class="cz-text-link cz-section-link" href="projects/">全部项目 <span aria-hidden="true">→</span></a>
+
+:::
+
+::: {.cz-work-grid}
+
+::: {.cz-work-card}
+
+<a class="cz-card-link" href="https://chengzhao-dev.github.io/cpp-notes/" aria-label="打开 cpp-notes 项目"></a>
+
+::: {.cz-work-head}
+
+<span class="cz-work-index">01</span><span class="cz-work-tag">C++ · 教程</span>
+
+:::
+
+::: {.cz-work-main}
+
+### cpp-notes
+把 C++ 从环境配置讲到类与对象。每一章都能编译、能运行，代码和解释放在一起。
+
+:::
+
+<span class="cz-work-art" aria-hidden="true">C++</span>
+
+::: {.cz-work-foot}
+
+<span>从第一行代码开始</span><span class="cz-arrow" aria-hidden="true">↗</span>
+
+:::
+
+:::
+
+::: {.cz-work-card}
+
+<a class="cz-card-link" href="https://chengzhao-dev.github.io/cpp-board-games/" aria-label="打开 cpp-board-games 项目"></a>
+
+::: {.cz-work-head}
+
+<span class="cz-work-index">02</span><span class="cz-work-tag">C++ · 工程</span>
+
+:::
+
+::: {.cz-work-main}
+
+### cpp-board-games
+用 CMake、测试和 JSON 协议，把一个终端小游戏拆成库、命令行和可验证的工程。
+
+:::
+
+<span class="cz-work-art" aria-hidden="true">TTT</span>
+
+::: {.cz-work-foot}
+
+<span>库 / CLI / 测试</span><span class="cz-arrow" aria-hidden="true">↗</span>
+
+:::
+
+:::
+
+::: {.cz-work-card}
+
+<a class="cz-card-link" href="notes/quarto-personal-website/" aria-label="阅读 dsh-quarto-website 的建站笔记"></a>
+
+::: {.cz-work-head}
+
+<span class="cz-work-index">03</span><span class="cz-work-tag">Tooling · Quarto</span>
+
+:::
+
+::: {.cz-work-main}
+
+### dsh-quarto-website
+把 Quarto 建站的知识、主题和发布流程收进一个 DSH 插件，下次从一句话开始。
+
+:::
+
+<span class="cz-work-art" aria-hidden="true">DSH</span>
+
+::: {.cz-work-foot}
+
+<span>可复用的建站工作流</span><span class="cz-arrow" aria-hidden="true">→</span>
+
+:::
+
+:::
+
+::: {.cz-work-card}
+
+<a class="cz-card-link" href="https://github.com/chengzhao-dev/chengzhao-dev.github.io" aria-label="查看本站源码"></a>
+
+::: {.cz-work-head}
+
+<span class="cz-work-index">04</span><span class="cz-work-tag">Quarto · 设计</span>
+
+:::
+
+::: {.cz-work-main}
+
+### 这个网站
+Quarto、自定义主题和一套克制的交互。只保留真正帮助阅读的东西。
+
+:::
+
+<span class="cz-work-art" aria-hidden="true">WWW</span>
+
+::: {.cz-work-foot}
+
+<span>源码公开</span><span class="cz-arrow" aria-hidden="true">↗</span>
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.cz-section}
+
+::: {.cz-section-head}
+
+<p class="cz-kicker">02 / 笔记</p>
+<h2>把学会的，<br>写成别人也能用的。</h2>
+<p class="cz-section-aside">关于 C++、构建系统、自动化，以及一个人怎样把网站长期维护下去。</p>
+<a class="cz-text-link cz-section-link" href="notes/">全部笔记 <span aria-hidden="true">→</span></a>
+
+:::
+
+<div class="cz-note-list">
+<div class="cz-note-row">
+<a class="cz-card-link" href="notes/quarto-personal-website/" aria-label="阅读：为什么我又把个人网站重做了一遍"></a>
+<div class="cz-note-date"><strong>10.18</strong>2026</div>
+<div class="cz-note-body"><span class="cz-note-tag">Quarto · 建站</span><h3>为什么我又把个人网站重做了一遍</h3><p>从模板到自定义主题，一次关于「少一点装饰，多一点阅读」的重构。</p></div>
+<span class="cz-arrow" aria-hidden="true">→</span>
+</div>
+<div class="cz-note-row">
+<a class="cz-card-link" href="notes/writing-runnable-cpp-notes/" aria-label="阅读：把 C++ 学习笔记写成可以运行的东西"></a>
+<div class="cz-note-date"><strong>10.12</strong>2026</div>
+<div class="cz-note-body"><span class="cz-note-tag">C++ · 写作</span><h3>把 C++ 学习笔记写成可以运行的东西</h3><p>为什么每个例子都应该能编译，以及怎样让读者在五分钟内看到结果。</p></div>
+<span class="cz-arrow" aria-hidden="true">→</span>
+</div>
+<div class="cz-note-row">
+<a class="cz-card-link" href="notes/github-actions-publishing/" aria-label="阅读：用 GitHub Actions 把发布变成一次 push"></a>
+<div class="cz-note-date"><strong>10.06</strong>2026</div>
+<div class="cz-note-body"><span class="cz-note-tag">自动化 · CI</span><h3>用 GitHub Actions 把发布变成一次 push</h3><p>构建、检查、部署，一条流水线；以及第一次配置时最容易漏掉的三件事。</p></div>
+<span class="cz-arrow" aria-hidden="true">→</span>
+</div>
+</div>
+
+:::
+
+::: {.cz-about}
+
+<div class="cz-about-poster" aria-hidden="true">
+<div class="cz-about-poster-top"><span>CHENGZHAO</span><span>C++ / PYTHON</span></div>
+<div class="cz-about-glyph">橙</div>
+<div class="cz-about-poster-bottom"><span>FIRST LIGHT</span><span>EST. 2026</span></div>
+</div>
+
+::: {.cz-about-copy}
+
+<p class="cz-kicker">03 / 关于</p>
+<h2>先做完整，<br>再做大。</h2>
+<p>我相信大多数事情不需要更复杂的方案，只需要有人愿意把它做完。所以这里的项目都从一个很小的、能运行的原型开始，再一点点加上边界、测试和说明。</p>
+
+::: {.cz-principles}
+
+::: {.cz-principle}
+
+<span>01</span>
+
+::: {.cz-principle-body}
+
+**先跑通，再抽象**
+能运行的最小版本，比一张完美的架构图更有用。
+
+:::
+
+:::
+
+::: {.cz-principle}
+
+<span>02</span>
+
+::: {.cz-principle-body}
+
+**写下来，才算学会**
+笔记不是摘抄，是一次重新组织，让别人也能照着做。
+
+:::
+
+:::
+
+::: {.cz-principle}
+
+<span>03</span>
+
+::: {.cz-principle-body}
+
+**把发布交给机器**
+构建、检查和部署应该重复、可预期，不靠记忆。
+
+:::
+
+:::
+
+:::
+
+<a class="cz-text-link" href="about/">更多关于我 <span aria-hidden="true">→</span></a>
+
+:::
+
+:::
+
+::: {.cz-contact}
+
+<p class="cz-kicker">04 / 联系</p>
+<h2>有想法，<br>就从一句话开始。</h2>
+<p>如果你也在学 C++、做个人网站，或者想一起把某个小工具做完整，欢迎写信。我通常会在一周内回复。</p>
+<a class="cz-button cz-button-primary" href="mailto:hsy13626781560@163.com">发一封邮件 <span aria-hidden="true">↗</span></a>
+<div class="cz-contact-meta">
+<span>EMAIL · hsy13626781560@163.com</span>
+<a href="https://github.com/chengzhao-dev" rel="me noopener">GITHUB ↗</a>
+<a href="notes/index.xml">RSS ↗</a>
+</div>
+
+:::
+
+::::
+
+</main>

@@ -1,0 +1,90 @@
+---
+title: "用 GitHub Actions 把发布变成一次 push"
+description: "构建、检查、部署，一条流水线；以及第一次配置时最容易漏掉的三件事。"
+date: 2026-10-06
+author: "橙照"
+categories: [自动化, CI]
+pagetitle: "用 GitHub Actions 把发布变成一次 push"
+---
+
+网站刚做好的时候，我每次都手动跑 `quarto render`，再把 `_site` 拖进 GitHub 网页上传。第三次之后我就知道这件事必须交给机器：不是因为它难，而是因为它重复、容易漏，而且没有任何乐趣。
+
+Quarto 官方提供了一个 GitHub Pages 工作流。核心只有三步：检出代码、安装 Quarto、发布。下面是我现在用的版本，放在 `.github/workflows/publish.yml`：
+
+```yaml
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+`permissions: contents: write` 不能省。默认的 `GITHUB_TOKEN` 只有读权限，工作流能成功构建，但在推送 `gh-pages` 时失败。错误通常出现在最后一步，看起来像网络问题，实际是权限。
+
+## 第一次发布后，还要改一个设置
+
+这是用户站点最容易漏的一步。仓库叫 `chengzhao-dev.github.io` 时，GitHub Pages 默认把 `main` 当作发布源。工作流把构建结果推到了 `gh-pages`，但 Pages 仍然在看 `main`，于是线上一直是旧页面，或者直接 404。
+
+发布成功后，去 **Settings → Pages**，把 **Build and deployment → Source** 改成 **Deploy from a branch**，分支选 `gh-pages`，目录选 `/ (root)`。只需要做一次。
+
+项目站点（比如 `cpp-notes`）也是同样的逻辑，只是仓库设置的位置一样，页面地址多一个子路径。
+
+## 本地预览和线上构建要一致
+
+Actions 里的 Quarto 版本可能比你本地新。某次我在本地能渲染，线上却因为一个已经废弃的 YAML 字段失败。后来我在工作流里固定版本：
+
+```yaml
+- uses: quarto-dev/quarto-actions/setup@v2
+  with:
+    version: "1.10.19"
+```
+
+固定版本不是拒绝升级，而是让“本地通过、线上失败”这种问题有一个明确的排查起点。升级时改一个数字，重新跑一遍，比在日志里猜版本要快。
+
+## 把检查放进流水线
+
+发布工作流不应该只负责“把文件推上去”。在 `publish` 之前加一步渲染检查，可以让坏链接、缺失的标题和无效的 YAML 在部署前暴露：
+
+```yaml
+- name: Render and check
+  run: |
+    quarto render
+    test -f _site/index.html
+    test -f _site/sitemap.xml
+```
+
+更严格的检查可以交给单独的脚本，比如遍历 `_site` 里的内部链接、确认每个页面都有 `<title>`、检查 `_site` 没有混入草稿。这些检查在本地也能跑，但只有放进 CI，才不会因为“这次赶时间”被跳过。
+
+## 三个常见故障
+
+**1. 发布成功，页面没变。** 先看 Pages 的 Source 是不是 `gh-pages`，再看工作流有没有真的推送成功。`gh-pages` 分支存在，不代表 Pages 在用它。
+
+**2. 样式在本地正常，线上 404。** 检查 CSS 和字体路径是不是以 `/` 开头。站点部署在用户根域名下没问题；如果以后放到子路径，根路径就会指错地方。
+
+**3. 工作流突然失败，日志只有一行权限错误。** 检查仓库的 **Settings → Actions → General → Workflow permissions** 是否允许读写，以及 YAML 里有没有声明 `contents: write`。
+
+## 发布应该无聊
+
+我现在对发布流程的期待是“无聊”：push，等两分钟，打开线上地址，页面是新的。没有手动上传，没有忘记渲染，也没有“这次先这样”。
+
+自动化不是为了显得专业。它只是把一件必须重复的事，变成一件不需要重复决定的事。省下来的注意力，可以拿去写下一篇文章。
+
+::: {.cz-post-end}
+这个网站的工作流在 [仓库里](https://github.com/chengzhao-dev/chengzhao-dev.github.io/blob/main/.github/workflows/publish.yml)。如果你也在配 Quarto + Pages，遇到卡住的地方，欢迎写信。
+:::

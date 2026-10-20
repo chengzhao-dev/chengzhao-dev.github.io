@@ -1,0 +1,8 @@
+/.quarto/
+/_site/
+/.shots/
+/.tmp/
+*.err
+.DS_Store
+Thumbs.db
+**/*.quarto_ipynb

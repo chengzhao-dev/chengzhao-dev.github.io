@@ -1,0 +1,129 @@
+/* ============================================================
+   橙照 · 设计令牌
+   字体自托管，颜色/间距/层级只在这里定义；其他 CSS 只引用变量。
+   ============================================================ */
+
+@font-face {
+  font-family: "Fraunces Variable";
+  src: url("../assets/fonts/fraunces-latin-standard-normal.woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces Variable";
+  src: url("../assets/fonts/fraunces-latin-standard-italic.woff2") format("woff2-variations");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LXGW Bright Medium";
+  src: url("../assets/fonts/lxgw-bright-medium-common.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LXGW Bright Code";
+  src: url("../assets/fonts/lxgw-bright-code-common.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  --cz-font-display: "Fraunces Variable", "LXGW Bright Medium", Georgia, "Songti SC", "Noto Serif SC", serif;
+  --cz-font-body: "LXGW Bright Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --cz-font-reading: "LXGW Bright Medium", Georgia, "Songti SC", "Noto Serif SC", serif;
+  --cz-font-mono: "LXGW Bright Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --cz-bg: #f7f2e8;
+  --cz-bg-deep: #efe7d8;
+  --cz-surface: rgba(255, 251, 243, 0.78);
+  --cz-surface-solid: #fffaf1;
+  --cz-ink: #221d17;
+  --cz-ink-2: #5d5448;
+  --cz-ink-3: #897c6c;
+  --cz-line: rgba(34, 29, 23, 0.14);
+  --cz-line-strong: rgba(34, 29, 23, 0.3);
+  --cz-accent: #b84e22;
+  --cz-accent-strong: #963a16;
+  --cz-accent-soft: #f2d8c5;
+  --cz-sage: #4e6b58;
+  --cz-gold: #c99a3f;
+  --cz-shadow: 0 26px 70px rgba(73, 46, 22, 0.13);
+  --cz-shadow-soft: 0 10px 30px rgba(73, 46, 22, 0.08);
+  --cz-glow: radial-gradient(circle at 50% 50%, rgba(201, 154, 63, 0.24), transparent 68%);
+
+  --cz-container: 1180px;
+  --cz-reading: 760px;
+  --cz-radius-sm: 10px;
+  --cz-radius: 18px;
+  --cz-radius-lg: 28px;
+  --cz-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cz-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --cz-nav-height: 72px;
+
+  /* Quarto / Bootstrap 变量对齐，避免组件回落到默认蓝灰。 */
+  --bs-body-bg: var(--cz-bg);
+  --bs-body-color: var(--cz-ink);
+  --bs-body-font-family: var(--cz-font-body);
+  --bs-link-color: var(--cz-accent-strong);
+  --bs-link-hover-color: var(--cz-accent);
+  --bs-border-color: var(--cz-line);
+  --bs-primary: var(--cz-accent);
+  --bs-secondary: var(--cz-sage);
+  --bs-tertiary-bg: var(--cz-bg-deep);
+  --quarto-font-monospace: var(--cz-font-mono);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cz-bg: #14110e;
+  --cz-bg-deep: #1b1713;
+  --cz-surface: rgba(32, 27, 22, 0.72);
+  --cz-surface-solid: #211b16;
+  --cz-ink: #f4ead9;
+  --cz-ink-2: #c9bba7;
+  --cz-ink-3: #948674;
+  --cz-line: rgba(244, 234, 217, 0.14);
+  --cz-line-strong: rgba(244, 234, 217, 0.3);
+  --cz-accent: #e98a5c;
+  --cz-accent-strong: #f2a97f;
+  --cz-accent-soft: rgba(233, 138, 92, 0.16);
+  --cz-sage: #9db8a4;
+  --cz-gold: #e0b25e;
+  --cz-shadow: 0 30px 80px rgba(0, 0, 0, 0.48);
+  --cz-shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.32);
+  --cz-glow: radial-gradient(circle at 50% 50%, rgba(233, 138, 92, 0.16), transparent 68%);
+
+  --bs-body-bg: var(--cz-bg);
+  --bs-body-color: var(--cz-ink);
+  --bs-link-color: var(--cz-accent);
+  --bs-link-hover-color: var(--cz-accent-strong);
+  --bs-border-color: var(--cz-line);
+  --bs-tertiary-bg: var(--cz-bg-deep);
+}
+
+::selection {
+  background: var(--cz-accent);
+  color: var(--cz-surface-solid);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

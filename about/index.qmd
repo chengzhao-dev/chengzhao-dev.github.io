@@ -1,0 +1,86 @@
+---
+pagetitle: "关于"
+description: "关于橙照，和这个网站为什么存在。"
+page-layout: custom
+toc: false
+---
+
+<main id="quarto-document-content" class="content">
+
+:::: {.cz-page .cz-about-page}
+
+::: {.cz-page-hero .cz-page-hero-split}
+<div>
+<p class="cz-kicker">03 / 关于</p>
+<h1>先做完整，<br>再做大。</h1>
+<p class="cz-page-lead">我是橙照。这里记录我写过的代码、想清楚的问题，以及把一件小事做完整的过程。</p>
+</div>
+<div class="cz-about-poster" aria-hidden="true">
+<div class="cz-about-poster-top"><span>CHENGZHAO</span><span>C++ / PYTHON</span></div>
+<div class="cz-about-glyph">橙</div>
+<div class="cz-about-poster-bottom"><span>KEEP BUILDING</span><span>EST. 2026</span></div>
+</div>
+:::
+
+::: {.cz-about-intro}
+
+<div class="cz-story">
+
+我主要写 C++，也写 Python。喜欢那些边界清楚、能运行、别人拿到之后不需要再猜的小项目。比起“看起来很厉害”的架构，我更在意一个东西能不能被维护，能不能在半年后还打开。
+
+这个网站最初只是想把散落的笔记放在一个地方。后来发现，整理本身也是一种练习：把问题拆开，把判断写清楚，把“我试过了”变成“你可以照着做”。所以这里的文章大多从一个具体的错误、一次构建失败，或者一个反复出现的疑问开始。
+
+我还在学习。文章里会有不成熟的地方，项目也会继续改。如果某篇笔记帮你少踩一个坑，或者某个项目让你想动手做一个自己的版本，这个网站就有用了。
+
+</div>
+
+<div class="cz-facts">
+<h2>快速了解</h2>
+<dl>
+<div><dt>正在做</dt><dd>C++ 学习笔记、Quarto 写作工具、个人网站</dd></div>
+<div><dt>常用的</dt><dd>C++20、CMake、Python、Git、Quarto、Linux</dd></div>
+<div><dt>写作方式</dt><dd>先跑通例子，再补解释；能复现的步骤优先</dd></div>
+<div><dt>联系</dt><dd><a href="mailto:hsy13626781560@163.com">hsy13626781560@163.com</a></dd></div>
+<div><dt>其他地方</dt><dd><a href="https://github.com/chengzhao-dev" rel="me noopener">GitHub</a> · <a href="/notes/index.xml">RSS</a></dd></div>
+</dl>
+</div>
+
+:::
+
+<div class="cz-story">
+
+## 为什么是“做完整”
+
+“完整”不是“完美”。一个完整的项目通常只需要几样东西：一条能复现的运行路径，一组能说明问题的测试，一份写到别人能上手的说明，以及一个不会在下次修改时立刻崩掉的结构。它们都不难，但需要有人愿意停下来做完。
+
+我把这个标准用在自己的笔记上。每个 C++ 例子尽量能编译；每篇建站文章尽量说明版本和前置条件；每次发布尽量走同一条流水线。做不到的时候，就在文章里写清楚哪里还没做到。
+
+## 这个网站怎么来的
+
+网站用 [Quarto](https://quarto.org) 构建，主题是在 Bootstrap 之上写的一层 SCSS 和 CSS，没有前端框架，也没有后端。字体自托管，页面由 GitHub Actions 发布到 GitHub Pages。
+
+它也是 [dsh-quarto-website](/notes/quarto-personal-website/) 这个插件的第一个使用者：主题、检查清单和发布流程先在这里跑通，再收回插件里。下次做类似的站点时，不需要从空白页开始。
+
+## 时间线
+
+<ul class="cz-timeline">
+<li><span class="cz-timeline-year">2024</span><div><h3>开始系统整理 C++ 笔记</h3><p>从环境配置和第一个编译错误开始，把每次卡住的地方记下来。</p></div></li>
+<li><span class="cz-timeline-year">2025</span><div><h3>把练习拆成能维护的工程</h3><p>用 CMake、CTest 和清晰的目录结构重写小项目，开始在意“别人能不能跑起来”。</p></div></li>
+<li><span class="cz-timeline-year">2026</span><div><h3>重做个人网站</h3><p>放弃现成模板，改为自定义主题和一条可重复的发布流程，同时把经验收进 DSH 插件。</p></div></li>
+</ul>
+
+## 几条工作原则
+
+<div class="cz-principles cz-principles-page">
+<div class="cz-principle"><span>01</span><div class="cz-principle-body"><strong>先跑通，再抽象</strong><p>能运行的最小版本，比一张完美的架构图更有用。</p></div></div>
+<div class="cz-principle"><span>02</span><div class="cz-principle-body"><strong>写下来，才算学会</strong><p>笔记不是摘抄，是一次重新组织，让别人也能照着做。</p></div></div>
+<div class="cz-principle"><span>03</span><div class="cz-principle-body"><strong>把发布交给机器</strong><p>构建、检查和部署应该重复、可预期，不靠记忆。</p></div></div>
+</div>
+
+<p class="cz-about-sign">如果你也在做类似的事，欢迎写信。<a href="mailto:hsy13626781560@163.com">聊聊你手上的问题 <span aria-hidden="true">↗</span></a></p>
+
+</div>
+
+::::
+
+</main>

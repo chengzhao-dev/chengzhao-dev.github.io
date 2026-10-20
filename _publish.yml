@@ -1,0 +1,4 @@
+- source: project
+  gh-pages:
+    - id: gh-pages
+      url: https://chengzhao-dev.github.io/

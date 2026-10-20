@@ -1,0 +1,23 @@
+<!-- 主题初始化必须早于首屏绘制：只改 <html>，body 类在 DOMContentLoaded 后同步。 -->
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F2E8">
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    try {
+      var saved = localStorage.getItem('cz-theme');
+      if (saved === 'dark' || saved === 'light') {
+        root.dataset.theme = saved;
+        root.dataset.bsTheme = saved;
+        root.style.colorScheme = saved;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', saved === 'dark' ? '#15120F' : '#F7F2E8');
+      }
+    } catch (error) {
+      /* 隐私模式下 localStorage 可能不可用，保持默认浅色。 */
+    }
+  })();
+</script>
+<link rel="preload" href="/theme/assets/fonts/lxgw-bright-medium-common.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/theme/assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>

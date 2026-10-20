@@ -1,0 +1,24 @@
+---
+description: "你访问的页面不存在。回到首页，或者从笔记里找点东西读。"
+pagetitle: "404"
+page-layout: custom
+toc: false
+---
+
+<main id="quarto-document-content" class="content">
+
+:::: {.cz-page}
+
+::: {.cz-404}
+<p class="cz-404-code">404 / NOT FOUND</p>
+<h1>这页纸，<br>暂时是空的。</h1>
+<p>你访问的地址可能已经移动，或者从来没有存在过。可以回到首页，也可以从笔记里找点东西读。</p>
+<p class="cz-404-actions">
+<a class="cz-button cz-button-primary" href="/">回到首页 <span aria-hidden="true">→</span></a>
+<a class="cz-button cz-button-ghost" href="/notes/">翻翻笔记 <span aria-hidden="true">↗</span></a>
+</p>
+:::
+
+::::
+
+</main>

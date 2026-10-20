@@ -1,0 +1,40 @@
+---
+pagetitle: "笔记"
+description: "关于 C++、构建系统、自动化，以及一个人怎样把网站长期维护下去。"
+page-layout: custom
+toc: false
+listing:
+  contents:
+    - "*/index.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  page-size: 12
+  fields: [date, title, description, categories]
+  date-format: "YYYY.MM.DD"
+  feed:
+    title: "橙照的笔记"
+    description: "关于 C++、构建系统、自动化，以及一个人怎样把网站长期维护下去。"
+    items: 20
+---
+
+<main id="quarto-document-content" class="content">
+
+:::: {.cz-page}
+
+::: {.cz-page-hero}
+<p class="cz-kicker">02 / 笔记</p>
+<h1>把学会的，<br>写成别人也能用的。</h1>
+<p class="cz-page-lead">不是“今天学了什么”的流水账。每篇尽量从一个真实问题出发，写清楚判断、做法和踩过的坑。按时间倒序排列，也可以按分类筛选。</p>
+:::
+
+<div class="cz-notes-rule" aria-hidden="true"><span>全部笔记</span><span>按发布时间</span></div>
+
+::: {#listing}
+:::
+
+::::
+
+</main>

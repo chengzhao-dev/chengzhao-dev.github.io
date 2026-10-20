@@ -1,0 +1,139 @@
+---
+pagetitle: "项目"
+description: "正在维护的公开项目：C++ 学习笔记、终端棋盘游戏，以及围绕 DeepSeek Harness 的工具。"
+page-layout: custom
+toc: false
+---
+
+<main id="quarto-document-content" class="content">
+
+:::: {.cz-page}
+
+::: {.cz-page-hero .cz-page-hero-split}
+<div>
+<p class="cz-kicker">01 / 项目</p>
+<h1>做过的东西，<br>都留在这里。</h1>
+<p class="cz-page-lead">从学习笔记到可运行的小工具，再到把建站经验收进插件。它们不完美，但都能打开、能运行、能继续往下做。</p>
+</div>
+<div class="cz-page-note">
+<p class="cz-note-label">当前节奏</p>
+<p>先维护 <strong>cpp-notes</strong> 与 <strong>cpp-board-games</strong>，再把建站和写作流程整理成可以复用的工具。新项目从一个小而完整的原型开始。</p>
+</div>
+:::
+
+::::: {.cz-project-list}
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[01]{.cz-project-no}
+[维护中]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [cpp-notes](https://chengzhao-dev.github.io/cpp-notes/)
+
+把 C++ 从环境配置讲到类与对象。每一章都尽量能编译、能运行，代码和解释放在一起，而不是只留下一段结论。
+
+<ul class="cz-tags"><li>C++20</li><li>教程</li><li>Quarto</li></ul>
+
+<p class="cz-project-links"><a href="https://chengzhao-dev.github.io/cpp-notes/">访问站点 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/cpp-notes">源码 <span aria-hidden="true">↗</span></a></p>
+:::
+<div class="cz-project-meta"><span>2024 — 现在</span><span>学习笔记</span></div>
+::::
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[02]{.cz-project-no}
+[维护中]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [cpp-board-games](https://chengzhao-dev.github.io/cpp-board-games/)
+
+用 CMake、测试和 JSON 协议，把一个终端小游戏拆成库、命令行和可验证的工程。重点不在游戏，而在“能维护”的结构。
+
+<ul class="cz-tags"><li>C++</li><li>CMake</li><li>CTest</li></ul>
+
+<p class="cz-project-links"><a href="https://chengzhao-dev.github.io/cpp-board-games/">访问站点 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/cpp-board-games">源码 <span aria-hidden="true">↗</span></a></p>
+:::
+<div class="cz-project-meta"><span>2025 — 现在</span><span>工程练习</span></div>
+::::
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[03]{.cz-project-no}
+[整理中]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [dsh-quarto-website](/notes/quarto-personal-website/)
+
+把 Quarto 个人网站的结构、主题、检查清单和发布流程收进一个 DeepSeek Harness 插件。目标不是生成模板，而是让下一次建站从清楚的决策开始。
+
+<ul class="cz-tags"><li>Quarto</li><li>DSH Plugin</li><li>TypeScript</li></ul>
+
+<p class="cz-project-links"><a href="/notes/quarto-personal-website/">读建站笔记 <span aria-hidden="true">→</span></a></p>
+:::
+<div class="cz-project-meta"><span>2026</span><span>工具 / 写作</span></div>
+::::
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[04]{.cz-project-no}
+[维护中]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [awesome-dsh-plugin](https://github.com/chengzhao-dev/awesome-dsh-plugin)
+
+一份 DeepSeek Harness 插件精选列表。按用途分类，尽量写清楚每个插件解决什么问题，以及维护状态。
+
+<ul class="cz-tags"><li>DSH</li><li>开源清单</li></ul>
+
+<p class="cz-project-links"><a href="https://awesome-dsh-plugin.com">访问站点 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/awesome-dsh-plugin">源码 <span aria-hidden="true">↗</span></a></p>
+:::
+<div class="cz-project-meta"><span>2026</span><span>社区资源</span></div>
+::::
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[05]{.cz-project-no}
+[维护中]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [dsh-quarto-book](https://github.com/chengzhao-dev/dsh-quarto-book)
+
+Quarto 书籍写作与主题的 DSH 插件：章节结构、检查工具、可复用书籍主题。和这个网站共用一套对“可维护文档”的理解。
+
+<ul class="cz-tags"><li>Quarto</li><li>DSH Plugin</li><li>书籍</li></ul>
+
+<p class="cz-project-links"><a href="https://github.com/chengzhao-dev/dsh-quarto-book">源码 <span aria-hidden="true">↗</span></a></p>
+:::
+<div class="cz-project-meta"><span>2026</span><span>写作工具</span></div>
+::::
+
+:::: {.cz-project}
+::: {.cz-project-side}
+[06]{.cz-project-no}
+[持续迭代]{.cz-project-state}
+:::
+::: {.cz-project-main}
+## [这个网站](https://github.com/chengzhao-dev/chengzhao-dev.github.io)
+
+Quarto、自定义主题和一套克制的交互。没有后端，没有追踪脚本，只有静态页面和一条可重复的发布流程。
+
+<ul class="cz-tags"><li>Quarto</li><li>SCSS</li><li>GitHub Pages</li></ul>
+
+<p class="cz-project-links"><a href="https://github.com/chengzhao-dev/chengzhao-dev.github.io">源码 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/chengzhao-dev.github.io/actions">构建记录 <span aria-hidden="true">↗</span></a></p>
+:::
+<div class="cz-project-meta"><span>2026</span><span>个人站点</span></div>
+::::
+
+:::::
+
+<div class="cz-page-cta">
+<p class="cz-kicker">一起做点东西</p>
+<h2>有想做的工具，<br>或者想一起把一件事做完整？</h2>
+<p>写一封邮件，告诉我你正在做什么。比“有空聊聊”更重要的是一个具体的问题。</p>
+<a class="cz-button cz-button-primary" href="mailto:hsy13626781560@163.com">发一封邮件 <span aria-hidden="true">↗</span></a>
+</div>
+
+::::
+
+</main>

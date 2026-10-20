@@ -1,0 +1,81 @@
+/*-- scss:defaults --*/
+
+// 橙照 · 深色。保持与浅色一致的层级，只替换纸张、墨水与强调色。
+
+$font-family-sans-serif: "LXGW Bright Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+$font-family-monospace: "LXGW Bright Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$font-family-serif: "LXGW Bright Medium", Georgia, "Songti SC", "Noto Serif SC", serif;
+$headings-font-family: "Fraunces Variable", "LXGW Bright Medium", Georgia, "Songti SC", "Noto Serif SC", serif;
+$headings-font-weight: 500;
+$headings-color: #f4ead9;
+$headings-line-height: 1.15;
+
+$font-size-root: 17px;
+$font-size-base: 1rem;
+$line-height-base: 1.8;
+$body-bg: #14110e;
+$body-color: #f4ead9;
+$secondary: #9db8a4;
+$primary: #e98a5c;
+$link-color: #f2a97f;
+$link-hover-color: #e98a5c;
+$link-decoration: underline;
+$link-hover-decoration: underline;
+
+$border-color: rgba(244, 234, 217, 0.14);
+$border-radius: 0.65rem;
+$border-radius-sm: 0.5rem;
+$border-radius-lg: 1.1rem;
+$btn-border-radius: 999px;
+$btn-border-radius-sm: 999px;
+$card-border-radius: 1.1rem;
+$input-border-radius: 0.65rem;
+
+$navbar-bg: transparent;
+$navbar-fg: #f4ead9;
+$navbar-hl: #e98a5c;
+$navbar-dark-bg: transparent;
+$navbar-dark-color: #f4ead9;
+
+$footer-bg: #0d0b09;
+$footer-fg: #c9bba7;
+$footer-hl: #e98a5c;
+
+$code-bg: rgba(244, 234, 217, 0.08);
+$code-color: #f2a97f;
+$code-block-bg: #0d0b09;
+$code-block-color: #f4ead9;
+$code-block-border-left: #e98a5c;
+
+$table-border-color: rgba(244, 234, 217, 0.12);
+$table-striped-bg: rgba(244, 234, 217, 0.03);
+
+$input-bg: #211b16;
+$input-border-color: rgba(244, 234, 217, 0.22);
+$input-color: #f4ead9;
+
+$dropdown-bg: #211b16;
+$dropdown-link-color: #f4ead9;
+$dropdown-link-hover-bg: rgba(233, 138, 92, 0.16);
+
+/*-- scss:rules --*/
+
+.quarto-title-banner {
+  margin-bottom: 0;
+  padding: 2.5rem 0 1rem;
+  background: transparent;
+  color: inherit;
+}
+
+.quarto-title-banner h1,
+.quarto-title-banner .title {
+  color: inherit;
+}
+
+.quarto-title-banner .quarto-title-meta {
+  color: #948674;
+}
+
+#quarto-header {
+  border-bottom: 0;
+}
