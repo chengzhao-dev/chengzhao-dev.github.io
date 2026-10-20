@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>橙照的笔记</title>
+<link>https://chengzhao-dev.github.io/notes/</link>
+<atom:link href="https://chengzhao-dev.github.io/notes/index.xml" rel="self" type="application/rss+xml"/>
+<description>关于 C++、构建系统、自动化，以及一个人怎样把网站长期维护下去。</description>
+<generator>quarto-1.10.19</generator>
+<lastBuildDate>Sun, 18 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>为什么我又把个人网站重做了一遍</title>
+  <dc:creator>橙照 </dc:creator>
+  <link>https://chengzhao-dev.github.io/notes/quarto-personal-website/</link>
+  <description><![CDATA[ 
+
+跳到正文
+
+
+
+
+
+<p>上一版网站用了现成模板。它不难看，也能用，但每加一个页面，我都得先猜模板的类名是什么意思，再决定要不要覆盖。几个月后，样式文件里堆满了 <code>!important</code>，而我仍然说不清首页那三栏在手机上是怎样折行的。</p>
+<p>这次重做，我给自己定了三个约束：</p>
+<ul>
+<li>静态站点，不引入前端框架；</li>
+<li>不加载第三方统计、字体或图标脚本；</li>
+<li>任何一个页面，在 3 秒内能读清主要内容，键盘也能走完。</li>
+</ul>
+<p>前两条是技术选择，第三条是验收标准。它们决定了后面的很多细节。</p>
+<section id="先定阅读路径再画页面" class="level2">
+<h2 data-anchor-id="先定阅读路径再画页面">先定阅读路径，再画页面</h2>
+<p>上一版从“首页要放什么”开始，结果首页塞了自我介绍、最新文章、项目卡片、友链、订阅框和一张很大的头像。每个模块都有一点用，但没有一个能让人停下來。</p>
+<p>这次先写了一个只有五行的草稿：</p>
+<blockquote class="blockquote">
+<p>我是谁 → 我做过什么 → 我最近在想什么 → 怎么联系我。</p>
+</blockquote>
+<p>对应的就是首页的顺序：一句主张、三个事实、项目、笔记、关于、联系。导航只保留这四件事，其他链接放进页脚。页面少了，反而更容易把每一屏做清楚。</p>
+</section>
+<section id="主题不是换一套颜色" class="level2">
+<h2 data-anchor-id="主题不是换一套颜色">主题不是换一套颜色</h2>
+<p>最容易做的事是改 <code>--bs-primary</code>，然后宣布“自定义主题完成”。真正麻烦的是那些模板没管的地方：标题的中英文混排、代码块的横向滚动、深色模式下的边框对比度、目录在窄屏上的位置。</p>
+<p>我把样式分成两层：</p>
+<ol type="1">
+<li><strong>变量层</strong>：颜色、字体、圆角、阴影、容器宽度，全部放在 <code>tokens.css</code>；</li>
+<li><strong>规则层</strong>：导航、首页、内页、页脚各自一个文件，只使用变量，不写死颜色。</li>
+</ol>
+<p>这样深色模式不需要复制一套规则。只要在根元素上切换 <code>data-theme</code>，再让 Quarto 自己的 <code>quarto-dark</code> 类跟上：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1">html<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">data-theme</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dark"</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">]</span> {</span>
+<span id="cb1-2">  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">--cz-bg</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#14110e</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-3">  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">--cz-ink</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#f4ead9</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-4">  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">--cz-accent</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#e98a5c</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-5">}</span></code></pre></div></div>
+<p>颜色不是越多越好。浅色模式用暖纸色做底，正文是偏暖的墨色；强调色只留给链接、按钮和少量标记。深色模式不是简单反色，而是把纸换成深棕，把橙色提亮，避免纯黑背景上的细字发虚。</p>
+</section>
+<section id="quarto-帮了大忙也有自己的脾气" class="level2">
+<h2 data-anchor-id="quarto-帮了大忙也有自己的脾气">Quarto 帮了大忙，也有自己的脾气</h2>
+<p>Quarto 的网站项目很适合这种站点：Markdown 写内容，YAML 管导航，Bootstrap 处理栅格，发布到 GitHub Pages 只需要一个 action。但它不是“零配置”。</p>
+<p>我踩到的第一个坑是缩进。首页最初用原始 HTML 写，<code>&lt;div class="cz-hero"&gt;</code> 内部的空行和四空格缩进被 Pandoc 当成了代码块，整段 HTML 原样显示在页面上。后来改成 fenced div：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1">::: {.cz-hero}</span>
+<span id="cb2-2">...</span>
+<span id="cb2-3">:::</span></code></pre></div></div>
+<p>这里还有一条规则：<code>:::</code> 的上一行必须是空行，下一行也要空一行。否则 Pandoc 会把围栏当成普通段落的一部分。这不是 Quarto 的 bug，是 Pandoc 的 Markdown 解析规则；知道以后就不再浪费时间怀疑人生。</p>
+<p>第二个坑是页面宽度。Quarto 的 <code>page-layout: custom</code> 不会自动把内容容器居中，默认贴着左侧。自定义页面需要自己处理：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#quarto-content</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.page-layout-custom</span> {</span>
+<span id="cb3-2">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">margin-inline</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">:</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">auto</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-3">}</span></code></pre></div></div>
+<p>第三个坑是链接。Quarto 不会阻止你写一个不存在的 <code>href</code>，但构建时会给出警告。把警告当错误看，顺手就能发现导航里指向 <code>.qmd</code> 而不是渲染后路径的链接。</p>
+</section>
+<section id="发布应该是一条命令" class="level2">
+<h2 data-anchor-id="发布应该是一条命令">发布应该是一条命令</h2>
+<p>网站最终放在 GitHub Pages 上。构建和发布都在 GitHub Actions 里完成，本地只负责写和预览：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> preview</span>
+<span id="cb4-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> render</span></code></pre></div></div>
+<p>发布工作流做三件事：安装 Quarto、渲染站点、把 <code>_site</code> 推到 <code>gh-pages</code>。第一次发布后，还要去仓库的 <strong>Settings → Pages</strong> 把来源改成 <code>gh-pages</code>。用户站点默认会指向 <code>main</code>，这一步很容易漏，漏了就会看到 404。</p>
+</section>
+<section id="最后留下的检查清单" class="level2">
+<h2 data-anchor-id="最后留下的检查清单">最后留下的检查清单</h2>
+<ul>
+<li>每个页面都有独立的 <code>title</code> 和 <code>description</code>；</li>
+<li>导航链接在本地渲染后仍然有效；</li>
+<li>深色模式不是反色，而是重新检查过对比度；</li>
+<li>键盘可以到达所有交互元素，焦点环清晰可见；</li>
+<li>关闭动画后，内容仍然完整；</li>
+<li>发布后打开线上地址，而不是只看本地预览。</li>
+</ul>
+<p>网站不是一次做完的。它现在仍然有一些我想改的地方，比如项目页的筛选、文章的上一篇/下一篇。但至少这次，我知道每一层为什么存在，也知道下一次该从哪里开始。</p>
+<div class="cz-post-end">
+<p><strong>这篇之后</strong>：我把这套主题、检查清单和发布流程收进了 <code>dsh-quarto-website</code> 插件。如果你也想用 Quarto 做一个自己的站点，可以从那里开始，而不是从一堆互相覆盖的 CSS 开始。</p>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a> ]]></description>
+  <category>Quarto</category>
+  <category>建站</category>
+  <guid>https://chengzhao-dev.github.io/notes/quarto-personal-website/</guid>
+  <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>把 C++ 学习笔记写成可以运行的东西</title>
+  <dc:creator>橙照 </dc:creator>
+  <link>https://chengzhao-dev.github.io/notes/writing-runnable-cpp-notes/</link>
+  <description><![CDATA[ 
+
+跳到正文
+
+
+
+
+
+<p>我以前写 C++ 笔记的方式是：看一段教程，抄一段代码，在旁边写“这里用了引用”。过两周回来，代码编译不过，我也说不清是环境变了，还是当时就抄错了。</p>
+<p>后来我把标准改了一点：<strong>每个出现在笔记里的例子，都要能单独编译；每个输出，都要是实际运行得到的。</strong> 这听起来只是多跑一次编译器，实际上会改变写笔记的方式。</p>
+<section id="例子要能独立存在" class="level2">
+<h2 data-anchor-id="例子要能独立存在">例子要能独立存在</h2>
+<p>最开始的例子常写成这样：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// 省略头文件和 main</span></span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>vector<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">};</span></span>
+<span id="cb1-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>sort<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>begin<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(),</span> values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>end<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">());</span></span></code></pre></div></div>
+<p>读者需要自己补 <code>#include</code>、命名空间和 <code>main</code>，还要猜 <code>values</code> 最后是什么。这些“显然”的部分，恰恰是初学者最容易卡住的地方。</p>
+<p>现在我会把例子写成完整文件：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;algorithm&gt;</span></span>
+<span id="cb2-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb2-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;vector&gt;</span></span>
+<span id="cb2-4"></span>
+<span id="cb2-5"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-6">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>vector<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">};</span></span>
+<span id="cb2-7">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>sort<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>begin<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(),</span> values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>end<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">());</span></span>
+<span id="cb2-8"></span>
+<span id="cb2-9">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> value <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-10">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> value <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">' '</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-11">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb2-12">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\n</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-13"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<p>再附上实际输出：</p>
+<pre class="text"><code>1 3 4</code></pre>
+<p>多出来的几行不是噪音，而是把“你可以直接运行”这件事变成真的。</p>
+</section>
+<section id="给每个例子一个位置" class="level2">
+<h2 data-anchor-id="给每个例子一个位置">给每个例子一个位置</h2>
+<p>如果文章里只有一个例子，贴代码块就够了。但当一章有十几个例子时，散在正文里的代码很快会失去上下文。我的做法是给每篇笔记一个独立目录：</p>
+<pre class="text"><code>notes/
+└── 03-references/
+    ├── index.qmd
+    ├── 01-basic.cpp
+    ├── 02-const-ref.cpp
+    └── expected.txt</code></pre>
+<p>正文通过代码块引用文件，构建前用一个脚本把源码和输出同步进去。这样例子可以被单独编译，笔记也不会因为复制粘贴而和源码走散。</p>
+<p>脚本本身不需要复杂：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> file <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> notes/<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">*</span>/<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">*</span>.cpp<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">;</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">do</span></span>
+<span id="cb5-2">  <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">g++</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-std</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>c++20 <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-Wall</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-Wextra</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-pedantic</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$file</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-o</span> /tmp/example</span>
+<span id="cb5-3">  <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/tmp/example</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">${file</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span>.cpp<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">.out"</span></span>
+<span id="cb5-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">done</span></span></code></pre></div></div>
+<p>真正重要的是把它放进发布流程。只要有一次提交没有通过编译，构建就会失败，而不是等到读者发现。</p>
+</section>
+<section id="解释为什么而不是复述语法" class="level2">
+<h2 data-anchor-id="解释为什么而不是复述语法">解释“为什么”，而不是复述语法</h2>
+<p>能运行的例子解决了“对不对”，但没有解决“为什么”。我尽量避免这种句子：</p>
+<blockquote class="blockquote">
+<p><code>const</code> 表示常量。</p>
+</blockquote>
+<p>它没有错，但读者看完仍然不知道什么时候该用。更有用的写法是先给出一个会出问题的场景，再说明约束：</p>
+<blockquote class="blockquote">
+<p>如果函数参数写成 <code>std::vector&lt;int&gt; values</code>，每次调用都会复制整个数组。数据量大时，这个复制会出现在性能分析里，而不是语法错误里。改成 <code>const std::vector&lt;int&gt;&amp;</code> 可以避免复制，同时承诺函数不会修改它。</p>
+</blockquote>
+<p>前者是定义，后者是判断。笔记的价值通常在后半部分。</p>
+</section>
+<section id="一个可以照着做的检查清单" class="level2">
+<h2 data-anchor-id="一个可以照着做的检查清单">一个可以照着做的检查清单</h2>
+<p>写完一篇 C++ 笔记，我会过一遍：</p>
+<ul>
+<li>每个代码块都有完整的 <code>#include</code> 和 <code>main</code>，或者明确说明它只是片段；</li>
+<li>代码用 <code>-Wall -Wextra -pedantic</code> 编译过；</li>
+<li>输出是实际运行结果，不是手写的“应该输出”；</li>
+<li>至少有一个地方解释“不这样写会怎样”；</li>
+<li>文中的文件名、命令和目录结构，与示例仓库一致；</li>
+<li>读者不需要先读上一篇，也能运行当前例子。</li>
+</ul>
+<p>这几条不保证文章写得好，但能保证它不会在读者第一次尝试时就失败。对学习笔记来说，这已经是一个不错的起点。</p>
+<div class="cz-post-end">
+<p>这些例子会陆续放进 <a href="https://chengzhao-dev.github.io/cpp-notes/">cpp-notes</a>。如果你发现某个例子在你的编译器上跑不通，欢迎写信告诉我编译器和版本。</p>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a> ]]></description>
+  <category>C++</category>
+  <category>写作</category>
+  <guid>https://chengzhao-dev.github.io/notes/writing-runnable-cpp-notes/</guid>
+  <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>用 GitHub Actions 把发布变成一次 push</title>
+  <dc:creator>橙照 </dc:creator>
+  <link>https://chengzhao-dev.github.io/notes/github-actions-publishing/</link>
+  <description><![CDATA[ 
+
+跳到正文
+
+
+
+
+
+<p>网站刚做好的时候，我每次都手动跑 <code>quarto render</code>，再把 <code>_site</code> 拖进 GitHub 网页上传。第三次之后我就知道这件事必须交给机器：不是因为它难，而是因为它重复、容易漏，而且没有任何乐趣。</p>
+<p>Quarto 官方提供了一个 GitHub Pages 工作流。核心只有三步：检出代码、安装 Quarto、发布。下面是我现在用的版本，放在 <code>.github/workflows/publish.yml</code>：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> Publish site</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">on</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-4"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">push</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">branches</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">[</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">main</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">]</span></span>
+<span id="cb1-6"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">workflow_dispatch</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">permissions</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-9"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">contents</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> write</span></span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">jobs</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-12"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">build-deploy</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-13"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">runs-on</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> ubuntu-latest</span></span>
+<span id="cb1-14"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">steps</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-15"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">uses</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> actions/checkout@v7</span></span>
+<span id="cb1-16"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">uses</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> quarto-dev/quarto-actions/setup@v2</span></span>
+<span id="cb1-17"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">uses</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> quarto-dev/quarto-actions/publish@v2</span></span>
+<span id="cb1-18"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">        </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">with</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-19"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">          </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">target</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> gh-pages</span></span>
+<span id="cb1-20"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">        </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">env</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-21"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">          </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">GITHUB_TOKEN</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre></div></div>
+<p><code>permissions: contents: write</code> 不能省。默认的 <code>GITHUB_TOKEN</code> 只有读权限，工作流能成功构建，但在推送 <code>gh-pages</code> 时失败。错误通常出现在最后一步，看起来像网络问题，实际是权限。</p>
+<section id="第一次发布后还要改一个设置" class="level2">
+<h2 data-anchor-id="第一次发布后还要改一个设置">第一次发布后，还要改一个设置</h2>
+<p>这是用户站点最容易漏的一步。仓库叫 <code>chengzhao-dev.github.io</code> 时，GitHub Pages 默认把 <code>main</code> 当作发布源。工作流把构建结果推到了 <code>gh-pages</code>，但 Pages 仍然在看 <code>main</code>，于是线上一直是旧页面，或者直接 404。</p>
+<p>发布成功后，去 <strong>Settings → Pages</strong>，把 <strong>Build and deployment → Source</strong> 改成 <strong>Deploy from a branch</strong>，分支选 <code>gh-pages</code>，目录选 <code>/ (root)</code>。只需要做一次。</p>
+<p>项目站点（比如 <code>cpp-notes</code>）也是同样的逻辑，只是仓库设置的位置一样，页面地址多一个子路径。</p>
+</section>
+<section id="本地预览和线上构建要一致" class="level2">
+<h2 data-anchor-id="本地预览和线上构建要一致">本地预览和线上构建要一致</h2>
+<p>Actions 里的 Quarto 版本可能比你本地新。某次我在本地能渲染，线上却因为一个已经废弃的 YAML 字段失败。后来我在工作流里固定版本：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">uses</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> quarto-dev/quarto-actions/setup@v2</span></span>
+<span id="cb2-2"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">with</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb2-3"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">version</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"1.10.19"</span></span></code></pre></div></div>
+<p>固定版本不是拒绝升级，而是让“本地通过、线上失败”这种问题有一个明确的排查起点。升级时改一个数字，重新跑一遍，比在日志里猜版本要快。</p>
+</section>
+<section id="把检查放进流水线" class="level2">
+<h2 data-anchor-id="把检查放进流水线">把检查放进流水线</h2>
+<p>发布工作流不应该只负责“把文件推上去”。在 <code>publish</code> 之前加一步渲染检查，可以让坏链接、缺失的标题和无效的 YAML 在部署前暴露：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">name</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> Render and check</span></span>
+<span id="cb3-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">  run</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">: </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">|</span></span>
+<span id="cb3-3">    quarto render</span>
+<span id="cb3-4">    test -f _site/index.html</span>
+<span id="cb3-5">    test -f _site/sitemap.xml</span></code></pre></div></div>
+<p>更严格的检查可以交给单独的脚本，比如遍历 <code>_site</code> 里的内部链接、确认每个页面都有 <code>&lt;title&gt;</code>、检查 <code>_site</code> 没有混入草稿。这些检查在本地也能跑，但只有放进 CI，才不会因为“这次赶时间”被跳过。</p>
+</section>
+<section id="三个常见故障" class="level2">
+<h2 data-anchor-id="三个常见故障">三个常见故障</h2>
+<p><strong>1. 发布成功，页面没变。</strong> 先看 Pages 的 Source 是不是 <code>gh-pages</code>，再看工作流有没有真的推送成功。<code>gh-pages</code> 分支存在，不代表 Pages 在用它。</p>
+<p><strong>2. 样式在本地正常，线上 404。</strong> 检查 CSS 和字体路径是不是以 <code>/</code> 开头。站点部署在用户根域名下没问题；如果以后放到子路径，根路径就会指错地方。</p>
+<p><strong>3. 工作流突然失败，日志只有一行权限错误。</strong> 检查仓库的 <strong>Settings → Actions → General → Workflow permissions</strong> 是否允许读写，以及 YAML 里有没有声明 <code>contents: write</code>。</p>
+</section>
+<section id="发布应该无聊" class="level2">
+<h2 data-anchor-id="发布应该无聊">发布应该无聊</h2>
+<p>我现在对发布流程的期待是“无聊”：push，等两分钟，打开线上地址，页面是新的。没有手动上传，没有忘记渲染，也没有“这次先这样”。</p>
+<p>自动化不是为了显得专业。它只是把一件必须重复的事，变成一件不需要重复决定的事。省下来的注意力，可以拿去写下一篇文章。</p>
+<div class="cz-post-end">
+<p>这个网站的工作流在 <a href="https://github.com/chengzhao-dev/chengzhao-dev.github.io/blob/main/.github/workflows/publish.yml">仓库里</a>。如果你也在配 Quarto + Pages，遇到卡住的地方，欢迎写信。</p>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a> ]]></description>
+  <category>自动化</category>
+  <category>CI</category>
+  <guid>https://chengzhao-dev.github.io/notes/github-actions-publishing/</guid>
+  <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

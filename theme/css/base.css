@@ -1,0 +1,738 @@
+/* ============================================================
+   橙照 · 基础层
+   全局排版、Quarto 文档骨架、代码/提示框/表格/目录与可访问性。
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cz-bg);
+  color: var(--cz-ink);
+  font-family: var(--cz-font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 42rem at 8% -8%, rgba(201, 154, 63, 0.16), transparent 62%),
+    radial-gradient(48rem 36rem at 105% 18%, rgba(191, 83, 39, 0.1), transparent 60%),
+    radial-gradient(52rem 40rem at 50% 110%, rgba(78, 107, 88, 0.1), transparent 65%);
+}
+
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(60rem 42rem at 8% -8%, rgba(224, 178, 94, 0.1), transparent 62%),
+    radial-gradient(48rem 36rem at 105% 18%, rgba(233, 138, 92, 0.1), transparent 60%),
+    radial-gradient(52rem 40rem at 50% 110%, rgba(157, 184, 164, 0.07), transparent 65%);
+}
+
+/* ---------- 排版 ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  margin: 0 0 0.6em;
+  color: var(--cz-ink);
+  font-family: var(--cz-font-display);
+  font-weight: 560;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  font-variation-settings: "SOFT" 20, "WONK" 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.7rem);
+}
+
+h2 {
+  margin-top: 2.4em;
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+}
+
+h3 {
+  margin-top: 1.9em;
+  font-size: clamp(1.3rem, 1.7vw, 1.55rem);
+}
+
+h4 {
+  font-size: 1.12rem;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+strong,
+b {
+  color: var(--cz-ink);
+  font-weight: 600;
+}
+
+em,
+i {
+  font-family: var(--cz-font-reading);
+}
+
+small {
+  font-size: 0.86em;
+  color: var(--cz-ink-2);
+}
+
+a {
+  color: var(--cz-accent-strong);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--cz-accent) 42%, transparent);
+  text-underline-offset: 0.2em;
+  transition: color 160ms var(--cz-ease), text-decoration-color 160ms var(--cz-ease);
+}
+
+a:hover {
+  color: var(--cz-accent);
+  text-decoration-color: currentColor;
+}
+
+hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--cz-line);
+}
+
+::marker {
+  color: var(--cz-accent);
+}
+
+ul,
+ol {
+  padding-left: 1.4em;
+}
+
+li {
+  margin: 0.35em 0;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--cz-accent);
+  border-radius: 0 var(--cz-radius-sm) var(--cz-radius-sm) 0;
+  background: color-mix(in srgb, var(--cz-accent-soft) 38%, transparent);
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: 1.08em;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+kbd {
+  padding: 0.15em 0.45em;
+  border: 1px solid var(--cz-line-strong);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--cz-bg-deep);
+  font-family: var(--cz-font-mono);
+  font-size: 0.8em;
+  color: var(--cz-ink-2);
+}
+
+mark {
+  padding: 0 0.15em;
+  background: var(--cz-accent-soft);
+  color: var(--cz-ink);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figcaption,
+.figure-caption {
+  margin-top: 0.65rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Quarto 页面骨架 ---------- */
+
+#quarto-content {
+  padding-top: 0;
+}
+
+#quarto-content.page-layout-custom,
+#quarto-content.page-layout-full {
+  margin-inline: auto;
+}
+
+.quarto-container {
+  max-width: var(--cz-container);
+}
+
+main.content {
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+/* 自定义内页自己排标题，隐藏 Quarto 的默认 title block。 */
+body:has(.cz-page) #title-block-header {
+  display: none;
+}
+
+body:has(.cz-page) main.content {
+  padding-top: 0;
+}
+
+main.cz-home-main {
+  padding: 0;
+}
+
+.quarto-document-content {
+  max-width: var(--cz-reading);
+}
+
+.page-layout-custom .quarto-document-content,
+.page-layout-full .quarto-document-content {
+  max-width: none;
+}
+
+#quarto-margin-sidebar {
+  top: calc(var(--cz-nav-height) + 1.5rem);
+}
+
+/* ---------- 标题区 ---------- */
+
+.quarto-title-block {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.quarto-title-block .title {
+  margin-bottom: 0.35em;
+  font-size: clamp(2.5rem, 5vw, 4.1rem);
+}
+
+.quarto-title-block .subtitle {
+  margin-bottom: 1rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 400;
+}
+
+.description {
+  max-width: 46rem;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-reading);
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  line-height: 1.75;
+}
+
+.quarto-title-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--cz-line);
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.quarto-title-meta-heading {
+  color: var(--cz-ink-3);
+  font-weight: 400;
+  opacity: 1;
+}
+
+.quarto-title-meta-contents {
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-body);
+  font-size: 0.86rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.quarto-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--cz-line-strong);
+  border-radius: 999px;
+  color: var(--cz-ink-2);
+  font-family: var(--cz-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.quarto-category:hover {
+  border-color: var(--cz-accent);
+  color: var(--cz-accent);
+}
+
+/* ---------- 正文细节 ---------- */
+
+.content p,
+.content li {
+  text-wrap: pretty;
+}
+
+.content h2 {
+  scroll-margin-top: calc(var(--cz-nav-height) + 1.5rem);
+}
+
+.content h3 {
+  scroll-margin-top: calc(var(--cz-nav-height) + 1.25rem);
+}
+
+.content a:not(.btn):not(.quarto-category) {
+  font-weight: 500;
+}
+
+.quarto-figure-center {
+  text-align: center;
+}
+
+.column-margin {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--cz-ink-2);
+}
+
+/* ---------- 代码 ---------- */
+
+code {
+  padding: 0.12em 0.36em;
+  border: 1px solid var(--cz-line);
+  border-radius: 6px;
+  background: var(--cz-bg-deep);
+  color: var(--cz-accent-strong);
+  font-family: var(--cz-font-mono);
+  font-size: 0.86em;
+}
+
+pre {
+  position: relative;
+  margin: 1.6rem 0;
+  padding: 1.25rem 1.35rem;
+  overflow: auto;
+  border: 1px solid rgba(244, 234, 217, 0.12);
+  border-radius: var(--cz-radius);
+  background: #1b1713;
+  color: #f4ead9;
+  font-family: var(--cz-font-mono);
+  font-size: 0.84rem;
+  line-height: 1.72;
+  box-shadow: var(--cz-shadow-soft);
+}
+
+html[data-theme="dark"] pre {
+  background: #0d0b09;
+}
+
+pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1em;
+}
+
+div.sourceCode {
+  margin: 1.6rem 0;
+}
+
+div.sourceCode pre {
+  margin: 0;
+}
+
+.code-with-filename {
+  margin: 1.6rem 0;
+  border-radius: var(--cz-radius);
+  overflow: hidden;
+}
+
+.code-with-filename .code-with-filename-file {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(244, 234, 217, 0.12);
+  border-bottom: 0;
+  border-radius: var(--cz-radius) var(--cz-radius) 0 0;
+  background: #241e18;
+  color: #c9bba7;
+  font-family: var(--cz-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.code-with-filename pre {
+  margin: 0;
+  border-radius: 0 0 var(--cz-radius) var(--cz-radius);
+}
+
+.code-copy-button {
+  top: 0.6rem;
+  right: 0.6rem;
+  border-radius: 8px;
+  background: rgba(244, 234, 217, 0.1);
+  color: #f4ead9;
+}
+
+.code-copy-button:hover {
+  background: var(--cz-accent);
+  color: #fffaf1;
+}
+
+/* ---------- 提示框 ---------- */
+
+.callout {
+  margin: 1.8rem 0;
+  border: 1px solid var(--cz-line);
+  border-left: 3px solid var(--cz-accent);
+  border-radius: var(--cz-radius-sm);
+  background: color-mix(in srgb, var(--cz-surface-solid) 72%, transparent);
+  box-shadow: none;
+}
+
+.callout.callout-style-default > .callout-header {
+  padding: 0.9rem 1.15rem;
+  background: transparent;
+  font-family: var(--cz-font-display);
+  font-weight: 560;
+}
+
+.callout .callout-body-container {
+  padding: 0 1.15rem 1rem;
+}
+
+.callout.callout-note {
+  border-left-color: var(--cz-sage);
+}
+
+.callout.callout-tip {
+  border-left-color: var(--cz-gold);
+}
+
+.callout.callout-warning {
+  border-left-color: var(--cz-gold);
+}
+
+.callout.callout-caution,
+.callout.callout-important {
+  border-left-color: var(--cz-accent);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 表格 ---------- */
+
+table {
+  width: 100%;
+  margin: 1.8rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+thead th {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--cz-line-strong);
+  background: var(--cz-bg-deep);
+  color: var(--cz-ink);
+  font-family: var(--cz-font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+tbody td {
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--cz-line);
+  vertical-align: top;
+}
+
+tbody tr:hover {
+  background: color-mix(in srgb, var(--cz-accent-soft) 24%, transparent);
+}
+
+/* ---------- 目录 ---------- */
+
+#TOC {
+  padding-left: 0;
+  border-left: 1px solid var(--cz-line);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+#TOC .toc-title {
+  margin-bottom: 0.65rem;
+  color: var(--cz-ink-3);
+  font-family: var(--cz-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#TOC a {
+  display: block;
+  padding: 0.28rem 0 0.28rem 0.9rem;
+  border-left: 2px solid transparent;
+  color: var(--cz-ink-2);
+  text-decoration: none;
+}
+
+#TOC a:hover,
+#TOC a.active {
+  border-left-color: var(--cz-accent);
+  color: var(--cz-accent);
+}
+
+#TOC ul {
+  padding-left: 0.7rem;
+  list-style: none;
+}
+
+#TOC > ul {
+  padding-left: 0;
+}
+
+/* ---------- 按钮 ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid var(--cz-line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cz-ink);
+  font-family: var(--cz-font-body);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 180ms var(--cz-ease), background 180ms var(--cz-ease), border-color 180ms var(--cz-ease), color 180ms var(--cz-ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--cz-accent);
+  color: var(--cz-accent);
+}
+
+.btn-primary,
+.btn.btn-primary {
+  border-color: var(--cz-accent);
+  background: var(--cz-accent);
+  color: #fffaf1;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+  background: var(--cz-accent-strong);
+  border-color: var(--cz-accent-strong);
+  color: #fffaf1;
+}
+
+/* ---------- 分页导航 ---------- */
+
+.page-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cz-line);
+}
+
+.page-navigation a {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--cz-line);
+  border-radius: var(--cz-radius-sm);
+  color: var(--cz-ink);
+  text-decoration: none;
+  transition: border-color 180ms var(--cz-ease), transform 180ms var(--cz-ease);
+}
+
+.page-navigation a:hover {
+  transform: translateY(-2px);
+  border-color: var(--cz-accent);
+}
+
+.page-navigation .nav-page-title {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--cz-accent);
+  font-family: var(--cz-font-display);
+  font-size: 1.05rem;
+}
+
+/* ---------- 搜索 / 返回顶部 ---------- */
+
+#quarto-search {
+  margin-left: 0.25rem;
+}
+
+.aa-Autocomplete .aa-Form,
+.aa-DetachedFormContainer {
+  border: 1px solid var(--cz-line);
+  border-radius: 999px;
+  background: var(--cz-surface);
+  color: var(--cz-ink);
+}
+
+.aa-DetachedOverlay {
+  background: color-mix(in srgb, var(--cz-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+#quarto-back-to-top {
+  border: 1px solid var(--cz-line);
+  border-radius: 999px;
+  background: var(--cz-surface);
+  color: var(--cz-ink-2);
+  font-size: 0.75rem;
+}
+
+#quarto-back-to-top:hover {
+  border-color: var(--cz-accent);
+  color: var(--cz-accent);
+}
+
+/* ---------- 无障碍与动效 ---------- */
+
+:focus-visible {
+  outline: 3px solid var(--cz-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.cz-skip {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 3000;
+  padding: 0.65rem 1rem;
+  border-radius: 0 0 10px 10px;
+  background: var(--cz-ink);
+  color: var(--cz-bg);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: top 160ms var(--cz-ease);
+}
+
+.cz-skip:focus {
+  top: 0;
+  color: var(--cz-bg);
+}
+
+.cz-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cz-gold), var(--cz-accent));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms var(--cz-ease) var(--reveal-delay, 0ms), transform 700ms var(--cz-ease) var(--reveal-delay, 0ms);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- 移动端 ---------- */
+
+@media (max-width: 991.98px) {
+  body {
+    font-size: 1rem;
+  }
+
+  main.content {
+    padding-top: 1.75rem;
+  }
+
+  .quarto-title-block .title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  #quarto-margin-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .quarto-title-meta {
+    gap: 0.9rem;
+  }
+
+  .page-navigation {
+    grid-template-columns: 1fr;
+  }
+}

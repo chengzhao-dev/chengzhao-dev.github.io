@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "01 / 项目\n\n\n\n从学习笔记到可运行的小工具，再到把建站经验收进插件。它们不完美，但都能打开、能运行、能继续往下做。\n\n\n\n\n当前节奏\n\n\n先维护 cpp-notes 与 cpp-board-games，再把建站和写作流程整理成可以复用的工具。新项目从一个小而完整的原型开始。\n\n\n\n\n\n\n01 维护中\n\n\n\n把 C++ 从环境配置讲到类与对象。每一章都尽量能编译、能运行，代码和解释放在一起，而不是只留下一段结论。\n\n\nC++20\n\n\n教程\n\n\nQuarto\n\n\n\n访问站点 ↗源码 ↗\n\n\n\n2026 — 现在学习笔记\n\n\n\n\n02 维护中\n\n\n\n用 CMake、测试和 JSON 协议，把一个终端小游戏拆成库、命令行和可验证的工程。重点不在游戏，而在“能维护”的结构。\n\n\nC++\n\n\nCMake\n\n\nCTest\n\n\n\n访问站点 ↗源码 ↗\n\n\n\n2026 — 现在工程练习\n\n\n\n\n03 整理中\n\n\n\n把 Quarto 个人网站的结构、主题、检查清单和发布流程收进一个 DeepSeek Harness 插件。目标不是生成模板，而是让下一次建站从清楚的决策开始。\n\n\nQuarto\n\n\nDSH Plugin\n\n\nTypeScript\n\n\n\n读建站笔记 →\n\n\n\n2026工具 / 写作\n\n\n\n\n04 维护中\n\n\n\n一份 DeepSeek Harness 插件精选列表。按用途分类，尽量写清楚每个插件解决什么问题，以及维护状态。\n\n\nDSH\n\n\n开源清单\n\n\n\n访问站点 ↗源码 ↗\n\n\n\n2026社区资源\n\n\n\n\n05 维护中\n\n\n\nQuarto 书籍写作与主题的 DSH 插件：章节结构、检查工具、可复用书籍主题。和这个网站共用一套对“可维护文档”的理解。\n\n\nQuarto\n\n\nDSH Plugin\n\n\n书籍\n\n\n\n源码 ↗\n\n\n\n2026写作工具\n\n\n\n\n06 持续迭代\n\n\n\nQuarto、自定义主题和一套克制的交互。没有后端，没有追踪脚本，只有静态页面和一条可重复的发布流程。\n\n\nQuarto\n\n\nSCSS\n\n\nGitHub Pages\n\n\n\n源码 ↗构建记录 ↗\n\n\n\n2026个人站点\n\n\n\n\n\n一起做点东西\n\n\n\n写一封邮件，告诉我你正在做什么。比“有空聊聊”更重要的是一个具体的问题。\n\n发一封邮件 ↗"
+  },
+  {
+    "objectID": "projects/index.html#cpp-notes",
+    "href": "projects/index.html#cpp-notes",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "把 C++ 从环境配置讲到类与对象。每一章都尽量能编译、能运行，代码和解释放在一起，而不是只留下一段结论。\n\n\nC++20\n\n\n教程\n\n\nQuarto\n\n\n\n访问站点 ↗源码 ↗"
+  },
+  {
+    "objectID": "projects/index.html#cpp-board-games",
+    "href": "projects/index.html#cpp-board-games",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "用 CMake、测试和 JSON 协议，把一个终端小游戏拆成库、命令行和可验证的工程。重点不在游戏，而在“能维护”的结构。\n\n\nC++\n\n\nCMake\n\n\nCTest\n\n\n\n访问站点 ↗源码 ↗"
+  },
+  {
+    "objectID": "projects/index.html#dsh-quarto-website",
+    "href": "projects/index.html#dsh-quarto-website",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "把 Quarto 个人网站的结构、主题、检查清单和发布流程收进一个 DeepSeek Harness 插件。目标不是生成模板，而是让下一次建站从清楚的决策开始。\n\n\nQuarto\n\n\nDSH Plugin\n\n\nTypeScript\n\n\n\n读建站笔记 →"
+  },
+  {
+    "objectID": "projects/index.html#awesome-dsh-plugin",
+    "href": "projects/index.html#awesome-dsh-plugin",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "一份 DeepSeek Harness 插件精选列表。按用途分类，尽量写清楚每个插件解决什么问题，以及维护状态。\n\n\nDSH\n\n\n开源清单\n\n\n\n访问站点 ↗源码 ↗"
+  },
+  {
+    "objectID": "projects/index.html#dsh-quarto-book",
+    "href": "projects/index.html#dsh-quarto-book",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "Quarto 书籍写作与主题的 DSH 插件：章节结构、检查工具、可复用书籍主题。和这个网站共用一套对“可维护文档”的理解。\n\n\nQuarto\n\n\nDSH Plugin\n\n\n书籍\n\n\n\n源码 ↗"
+  },
+  {
+    "objectID": "projects/index.html#这个网站",
+    "href": "projects/index.html#这个网站",
+    "title": "\n做过的东西，都留在这里。\n",
+    "section": "",
+    "text": "Quarto、自定义主题和一套克制的交互。没有后端，没有追踪脚本，只有静态页面和一条可重复的发布流程。\n\n\nQuarto\n\n\nSCSS\n\n\nGitHub Pages\n\n\n\n源码 ↗构建记录 ↗"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html",
+    "href": "notes/github-actions-publishing/index.html",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "",
+    "text": "跳到正文\n网站刚做好的时候，我每次都手动跑 quarto render，再把 _site 拖进 GitHub 网页上传。第三次之后我就知道这件事必须交给机器：不是因为它难，而是因为它重复、容易漏，而且没有任何乐趣。\nQuarto 官方提供了一个 GitHub Pages 工作流。核心只有三步：检出代码、安装 Quarto、发布。下面是我现在用的版本，放在 .github/workflows/publish.yml：\npermissions: contents: write 不能省。默认的 GITHUB_TOKEN 只有读权限，工作流能成功构建，但在推送 gh-pages 时失败。错误通常出现在最后一步，看起来像网络问题，实际是权限。"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html#第一次发布后还要改一个设置",
+    "href": "notes/github-actions-publishing/index.html#第一次发布后还要改一个设置",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "第一次发布后，还要改一个设置",
+    "text": "第一次发布后，还要改一个设置\n这是用户站点最容易漏的一步。仓库叫 chengzhao-dev.github.io 时，GitHub Pages 默认把 main 当作发布源。工作流把构建结果推到了 gh-pages，但 Pages 仍然在看 main，于是线上一直是旧页面，或者直接 404。\n发布成功后，去 Settings → Pages，把 Build and deployment → Source 改成 Deploy from a branch，分支选 gh-pages，目录选 / (root)。只需要做一次。\n项目站点（比如 cpp-notes）也是同样的逻辑，只是仓库设置的位置一样，页面地址多一个子路径。"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html#本地预览和线上构建要一致",
+    "href": "notes/github-actions-publishing/index.html#本地预览和线上构建要一致",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "本地预览和线上构建要一致",
+    "text": "本地预览和线上构建要一致\nActions 里的 Quarto 版本可能比你本地新。某次我在本地能渲染，线上却因为一个已经废弃的 YAML 字段失败。后来我在工作流里固定版本：\n- uses: quarto-dev/quarto-actions/setup@v2\n  with:\n    version: \"1.10.19\"\n固定版本不是拒绝升级，而是让“本地通过、线上失败”这种问题有一个明确的排查起点。升级时改一个数字，重新跑一遍，比在日志里猜版本要快。"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html#把检查放进流水线",
+    "href": "notes/github-actions-publishing/index.html#把检查放进流水线",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "把检查放进流水线",
+    "text": "把检查放进流水线\n发布工作流不应该只负责“把文件推上去”。在 publish 之前加一步渲染检查，可以让坏链接、缺失的标题和无效的 YAML 在部署前暴露：\n- name: Render and check\n  run: |\n    quarto render\n    test -f _site/index.html\n    test -f _site/sitemap.xml\n更严格的检查可以交给单独的脚本，比如遍历 _site 里的内部链接、确认每个页面都有 &lt;title&gt;、检查 _site 没有混入草稿。这些检查在本地也能跑，但只有放进 CI，才不会因为“这次赶时间”被跳过。"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html#三个常见故障",
+    "href": "notes/github-actions-publishing/index.html#三个常见故障",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "三个常见故障",
+    "text": "三个常见故障\n1. 发布成功，页面没变。 先看 Pages 的 Source 是不是 gh-pages，再看工作流有没有真的推送成功。gh-pages 分支存在，不代表 Pages 在用它。\n2. 样式在本地正常，线上 404。 检查 CSS 和字体路径是不是以 / 开头。站点部署在用户根域名下没问题；如果以后放到子路径，根路径就会指错地方。\n3. 工作流突然失败，日志只有一行权限错误。 检查仓库的 Settings → Actions → General → Workflow permissions 是否允许读写，以及 YAML 里有没有声明 contents: write。"
+  },
+  {
+    "objectID": "notes/github-actions-publishing/index.html#发布应该无聊",
+    "href": "notes/github-actions-publishing/index.html#发布应该无聊",
+    "title": "用 GitHub Actions 把发布变成一次 push",
+    "section": "发布应该无聊",
+    "text": "发布应该无聊\n我现在对发布流程的期待是“无聊”：push，等两分钟，打开线上地址，页面是新的。没有手动上传，没有忘记渲染，也没有“这次先这样”。\n自动化不是为了显得专业。它只是把一件必须重复的事，变成一件不需要重复决定的事。省下来的注意力，可以拿去写下一篇文章。\n\n这个网站的工作流在 仓库里。如果你也在配 Quarto + Pages，遇到卡住的地方，欢迎写信。"
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "\n把学会的，写成别人也能用的。\n",
+    "section": "",
+    "text": "02 / 笔记\n\n\n把学会的，写成别人也能用的。\n\n\n不是“今天学了什么”的流水账。每篇尽量从一个真实问题出发，写清楚判断、做法和踩过的坑。按时间倒序排列，也可以按分类筛选。\n\n\n\n全部笔记按发布时间\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n为什么我又把个人网站重做了一遍\n\n\n\nQuarto\n\n建站\n\n\n\n从模板到自定义主题：一次关于「少一点装饰，多一点阅读」的重构，以及最后留下来的几条规则。\n\n\n\n\n\n2026.10.18\n\n\n\n\n\n\n\n把 C++ 学习笔记写成可以运行的东西\n\n\n\nC++\n\n写作\n\n\n\n为什么每个例子都应该能编译，以及怎样让读者在五分钟内看到结果。\n\n\n\n\n\n2026.10.12\n\n\n\n\n\n\n\n用 GitHub Actions 把发布变成一次 push\n\n\n\n自动化\n\nCI\n\n\n\n构建、检查、部署，一条流水线；以及第一次配置时最容易漏掉的三件事。\n\n\n\n\n\n2026.10.06\n\n\n\n\n\n无匹配项\n\n\n 回到顶部"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n把复杂的事，做简单。把简单的事，做完整。\n",
+    "section": "",
+    "text": "写代码的人 · C++ / Python / 工具\n\n\n把复杂的事，做简单。把简单的事，做完整。\n\n\n我是橙照。写 C++，也写 Python；做小工具，也把踩过的坑整理成能复现的笔记。这个网站，是我练习「把一件事做完整」的地方。\n\n\n看看我在做什么 → GitHub ↗\n\n\n\n\n06\n\n\n个项目\n\n\n\n\n03\n\n\n篇公开笔记\n\n\n\n\n2026\n\n\n开始长期写作\n\n\n\n\n\n\n\n\n\n\n~/chengzhao/hello.cpp\n\n#include &lt;iostream&gt;\n#include &lt;string&gt;\n\nint main() {\n  std::string name = \"world\";\n  std::cout &lt;&lt; \"hello, \" &lt;&lt; name &lt;&lt; '\\n';\n  return 0;\n}\n\n✓ hello, world · g++ -std=c++20 · 编译通过\n\n\n\n最新笔记为什么不直接用模板？\n\n\n✓\n\n构建通过GitHub Actions · push 后自动发布\n\n\n\n\n\n\n\nC++20CMakePythonQuartoGitHub ActionsLinuxNeovimGitMarkdownWSL2ClangSQLite\n\n\nC++20CMakePythonQuartoGitHub ActionsLinuxNeovimGitMarkdownWSL2ClangSQLite\n\n\n\n\n\n\n01 / 项目\n\n\n从问题出发，让每一行代码都有去处。\n\n\n不追求数量。每个项目都尽量有清楚的边界、能运行的代码，以及一条别人可以照着走的路。\n\n全部项目 →\n\n\n\n\n\n01C++ · 教程\n\n\ncpp-notes\n把 C++ 从环境配置讲到类与对象。每一章都能编译、能运行，代码和解释放在一起。\n\nC++\n\n从第一行代码开始↗\n\n\n\n\n\n02C++ · 工程\n\n\ncpp-board-games\n用 CMake、测试和 JSON 协议，把一个终端小游戏拆成库、命令行和可验证的工程。\n\nTTT\n\n库 / CLI / 测试↗\n\n\n\n\n\n03Tooling · Quarto\n\n\ndsh-quarto-website\n把 Quarto 建站的知识、主题和发布流程收进一个 DSH 插件，下次从一句话开始。\n\nDSH\n\n可复用的建站工作流→\n\n\n\n\n\n04Quarto · 设计\n\n\n这个网站\nQuarto、自定义主题和一套克制的交互。只保留真正帮助阅读的东西。\n\nWWW\n\n源码公开↗\n\n\n\n\n\n\n\n02 / 笔记\n\n\n把学会的，写成别人也能用的。\n\n\n关于 C++、构建系统、自动化，以及一个人怎样把网站长期维护下去。\n\n全部笔记 →\n\n\n\n\n\n10.182026\n\n\nQuarto · 建站\n\n为什么我又把个人网站重做了一遍\n\n\n从模板到自定义主题，一次关于「少一点装饰，多一点阅读」的重构。\n\n\n→\n\n\n\n\n10.122026\n\n\nC++ · 写作\n\n把 C++ 学习笔记写成可以运行的东西\n\n\n为什么每个例子都应该能编译，以及怎样让读者在五分钟内看到结果。\n\n\n→\n\n\n\n\n10.062026\n\n\n自动化 · CI\n\n用 GitHub Actions 把发布变成一次 push\n\n\n构建、检查、部署，一条流水线；以及第一次配置时最容易漏掉的三件事。\n\n\n→\n\n\n\n\n\n\nCHENGZHAOC++ / PYTHON\n\n\n橙\n\n\nFIRST LIGHTEST. 2026\n\n\n\n\n03 / 关于\n\n\n先做完整，再做大。\n\n\n我相信大多数事情不需要更复杂的方案，只需要有人愿意把它做完。所以这里的项目都从一个很小的、能运行的原型开始，再一点点加上边界、测试和说明。\n\n\n\n01\n\n先跑通，再抽象 能运行的最小版本，比一张完美的架构图更有用。\n\n\n\n02\n\n写下来，才算学会 笔记不是摘抄，是一次重新组织，让别人也能照着做。\n\n\n\n03\n\n把发布交给机器 构建、检查和部署应该重复、可预期，不靠记忆。\n\n\n\n更多关于我 →\n\n\n\n\n04 / 联系\n\n\n有想法，就从一句话开始。\n\n\n如果你也在学 C++、做个人网站，或者想一起把某个小工具做完整，欢迎写信。我通常会在一周内回复。\n\n发一封邮件 ↗\n\nEMAIL · hsy13626781560@163.com GITHUB ↗ RSS ↗\n\n\n\n 回到顶部"
+  },
+  {
+    "objectID": "notes/writing-runnable-cpp-notes/index.html",
+    "href": "notes/writing-runnable-cpp-notes/index.html",
+    "title": "把 C++ 学习笔记写成可以运行的东西",
+    "section": "",
+    "text": "跳到正文\n我以前写 C++ 笔记的方式是：看一段教程，抄一段代码，在旁边写“这里用了引用”。过两周回来，代码编译不过，我也说不清是环境变了，还是当时就抄错了。\n后来我把标准改了一点：每个出现在笔记里的例子，都要能单独编译；每个输出，都要是实际运行得到的。 这听起来只是多跑一次编译器，实际上会改变写笔记的方式。"
+  },
+  {
+    "objectID": "notes/writing-runnable-cpp-notes/index.html#例子要能独立存在",
+    "href": "notes/writing-runnable-cpp-notes/index.html#例子要能独立存在",
+    "title": "把 C++ 学习笔记写成可以运行的东西",
+    "section": "例子要能独立存在",
+    "text": "例子要能独立存在\n最开始的例子常写成这样：\n// 省略头文件和 main\nstd::vector&lt;int&gt; values{3, 1, 4};\nstd::sort(values.begin(), values.end());\n读者需要自己补 #include、命名空间和 main，还要猜 values 最后是什么。这些“显然”的部分，恰恰是初学者最容易卡住的地方。\n现在我会把例子写成完整文件：\n#include &lt;algorithm&gt;\n#include &lt;iostream&gt;\n#include &lt;vector&gt;\n\nint main() {\n  std::vector&lt;int&gt; values{3, 1, 4};\n  std::sort(values.begin(), values.end());\n\n  for (int value : values) {\n    std::cout &lt;&lt; value &lt;&lt; ' ';\n  }\n  std::cout &lt;&lt; '\\n';\n}\n再附上实际输出：\n1 3 4\n多出来的几行不是噪音，而是把“你可以直接运行”这件事变成真的。"
+  },
+  {
+    "objectID": "notes/writing-runnable-cpp-notes/index.html#给每个例子一个位置",
+    "href": "notes/writing-runnable-cpp-notes/index.html#给每个例子一个位置",
+    "title": "把 C++ 学习笔记写成可以运行的东西",
+    "section": "给每个例子一个位置",
+    "text": "给每个例子一个位置\n如果文章里只有一个例子，贴代码块就够了。但当一章有十几个例子时，散在正文里的代码很快会失去上下文。我的做法是给每篇笔记一个独立目录：\nnotes/\n└── 03-references/\n    ├── index.qmd\n    ├── 01-basic.cpp\n    ├── 02-const-ref.cpp\n    └── expected.txt\n正文通过代码块引用文件，构建前用一个脚本把源码和输出同步进去。这样例子可以被单独编译，笔记也不会因为复制粘贴而和源码走散。\n脚本本身不需要复杂：\nfor file in notes/*/*.cpp; do\n  g++ -std=c++20 -Wall -Wextra -pedantic \"$file\" -o /tmp/example\n  /tmp/example &gt; \"${file%.cpp}.out\"\ndone\n真正重要的是把它放进发布流程。只要有一次提交没有通过编译，构建就会失败，而不是等到读者发现。"
+  },
+  {
+    "objectID": "notes/writing-runnable-cpp-notes/index.html#解释为什么而不是复述语法",
+    "href": "notes/writing-runnable-cpp-notes/index.html#解释为什么而不是复述语法",
+    "title": "把 C++ 学习笔记写成可以运行的东西",
+    "section": "解释“为什么”，而不是复述语法",
+    "text": "解释“为什么”，而不是复述语法\n能运行的例子解决了“对不对”，但没有解决“为什么”。我尽量避免这种句子：\n\nconst 表示常量。\n\n它没有错，但读者看完仍然不知道什么时候该用。更有用的写法是先给出一个会出问题的场景，再说明约束：\n\n如果函数参数写成 std::vector&lt;int&gt; values，每次调用都会复制整个数组。数据量大时，这个复制会出现在性能分析里，而不是语法错误里。改成 const std::vector&lt;int&gt;& 可以避免复制，同时承诺函数不会修改它。\n\n前者是定义，后者是判断。笔记的价值通常在后半部分。"
+  },
+  {
+    "objectID": "notes/writing-runnable-cpp-notes/index.html#一个可以照着做的检查清单",
+    "href": "notes/writing-runnable-cpp-notes/index.html#一个可以照着做的检查清单",
+    "title": "把 C++ 学习笔记写成可以运行的东西",
+    "section": "一个可以照着做的检查清单",
+    "text": "一个可以照着做的检查清单\n写完一篇 C++ 笔记，我会过一遍：\n\n每个代码块都有完整的 #include 和 main，或者明确说明它只是片段；\n代码用 -Wall -Wextra -pedantic 编译过；\n输出是实际运行结果，不是手写的“应该输出”；\n至少有一个地方解释“不这样写会怎样”；\n文中的文件名、命令和目录结构，与示例仓库一致；\n读者不需要先读上一篇，也能运行当前例子。\n\n这几条不保证文章写得好，但能保证它不会在读者第一次尝试时就失败。对学习笔记来说，这已经是一个不错的起点。\n\n这些例子会陆续放进 cpp-notes。如果你发现某个例子在你的编译器上跑不通，欢迎写信告诉我编译器和版本。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html",
+    "href": "notes/quarto-personal-website/index.html",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "",
+    "text": "跳到正文\n上一版网站用了现成模板。它不难看，也能用，但每加一个页面，我都得先猜模板的类名是什么意思，再决定要不要覆盖。几个月后，样式文件里堆满了 !important，而我仍然说不清首页那三栏在手机上是怎样折行的。\n这次重做，我给自己定了三个约束：\n前两条是技术选择，第三条是验收标准。它们决定了后面的很多细节。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html#先定阅读路径再画页面",
+    "href": "notes/quarto-personal-website/index.html#先定阅读路径再画页面",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "先定阅读路径，再画页面",
+    "text": "先定阅读路径，再画页面\n上一版从“首页要放什么”开始，结果首页塞了自我介绍、最新文章、项目卡片、友链、订阅框和一张很大的头像。每个模块都有一点用，但没有一个能让人停下來。\n这次先写了一个只有五行的草稿：\n\n我是谁 → 我做过什么 → 我最近在想什么 → 怎么联系我。\n\n对应的就是首页的顺序：一句主张、三个事实、项目、笔记、关于、联系。导航只保留这四件事，其他链接放进页脚。页面少了，反而更容易把每一屏做清楚。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html#主题不是换一套颜色",
+    "href": "notes/quarto-personal-website/index.html#主题不是换一套颜色",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "主题不是换一套颜色",
+    "text": "主题不是换一套颜色\n最容易做的事是改 --bs-primary，然后宣布“自定义主题完成”。真正麻烦的是那些模板没管的地方：标题的中英文混排、代码块的横向滚动、深色模式下的边框对比度、目录在窄屏上的位置。\n我把样式分成两层：\n\n变量层：颜色、字体、圆角、阴影、容器宽度，全部放在 tokens.css；\n规则层：导航、首页、内页、页脚各自一个文件，只使用变量，不写死颜色。\n\n这样深色模式不需要复制一套规则。只要在根元素上切换 data-theme，再让 Quarto 自己的 quarto-dark 类跟上：\nhtml[data-theme=\"dark\"] {\n  --cz-bg: #14110e;\n  --cz-ink: #f4ead9;\n  --cz-accent: #e98a5c;\n}\n颜色不是越多越好。浅色模式用暖纸色做底，正文是偏暖的墨色；强调色只留给链接、按钮和少量标记。深色模式不是简单反色，而是把纸换成深棕，把橙色提亮，避免纯黑背景上的细字发虚。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html#quarto-帮了大忙也有自己的脾气",
+    "href": "notes/quarto-personal-website/index.html#quarto-帮了大忙也有自己的脾气",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "Quarto 帮了大忙，也有自己的脾气",
+    "text": "Quarto 帮了大忙，也有自己的脾气\nQuarto 的网站项目很适合这种站点：Markdown 写内容，YAML 管导航，Bootstrap 处理栅格，发布到 GitHub Pages 只需要一个 action。但它不是“零配置”。\n我踩到的第一个坑是缩进。首页最初用原始 HTML 写，&lt;div class=\"cz-hero\"&gt; 内部的空行和四空格缩进被 Pandoc 当成了代码块，整段 HTML 原样显示在页面上。后来改成 fenced div：\n::: {.cz-hero}\n...\n:::\n这里还有一条规则：::: 的上一行必须是空行，下一行也要空一行。否则 Pandoc 会把围栏当成普通段落的一部分。这不是 Quarto 的 bug，是 Pandoc 的 Markdown 解析规则；知道以后就不再浪费时间怀疑人生。\n第二个坑是页面宽度。Quarto 的 page-layout: custom 不会自动把内容容器居中，默认贴着左侧。自定义页面需要自己处理：\n#quarto-content.page-layout-custom {\n  margin-inline: auto;\n}\n第三个坑是链接。Quarto 不会阻止你写一个不存在的 href，但构建时会给出警告。把警告当错误看，顺手就能发现导航里指向 .qmd 而不是渲染后路径的链接。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html#发布应该是一条命令",
+    "href": "notes/quarto-personal-website/index.html#发布应该是一条命令",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "发布应该是一条命令",
+    "text": "发布应该是一条命令\n网站最终放在 GitHub Pages 上。构建和发布都在 GitHub Actions 里完成，本地只负责写和预览：\nquarto preview\nquarto render\n发布工作流做三件事：安装 Quarto、渲染站点、把 _site 推到 gh-pages。第一次发布后，还要去仓库的 Settings → Pages 把来源改成 gh-pages。用户站点默认会指向 main，这一步很容易漏，漏了就会看到 404。"
+  },
+  {
+    "objectID": "notes/quarto-personal-website/index.html#最后留下的检查清单",
+    "href": "notes/quarto-personal-website/index.html#最后留下的检查清单",
+    "title": "为什么我又把个人网站重做了一遍",
+    "section": "最后留下的检查清单",
+    "text": "最后留下的检查清单\n\n每个页面都有独立的 title 和 description；\n导航链接在本地渲染后仍然有效；\n深色模式不是反色，而是重新检查过对比度；\n键盘可以到达所有交互元素，焦点环清晰可见；\n关闭动画后，内容仍然完整；\n发布后打开线上地址，而不是只看本地预览。\n\n网站不是一次做完的。它现在仍然有一些我想改的地方，比如项目页的筛选、文章的上一篇/下一篇。但至少这次，我知道每一层为什么存在，也知道下一次该从哪里开始。\n\n这篇之后：我把这套主题、检查清单和发布流程收进了 dsh-quarto-website 插件。如果你也想用 Quarto 做一个自己的站点，可以从那里开始，而不是从一堆互相覆盖的 CSS 开始。"
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "\n先做完整，再做大。\n",
+    "section": "",
+    "text": "03 / 关于\n\n\n\n我是橙照。这里记录我写过的代码、想清楚的问题，以及把一件小事做完整的过程。\n\n\n\n\nCHENGZHAOC++ / PYTHON\n\n\n橙\n\n\nKEEP BUILDINGEST. 2026\n\n\n\n\n\n我主要写 C++，也写 Python。喜欢那些边界清楚、能运行、别人拿到之后不需要再猜的小项目。比起“看起来很厉害”的架构，我更在意一个东西能不能被维护，能不能在半年后还打开。\n这个网站最初只是想把散落的笔记放在一个地方。后来发现，整理本身也是一种练习：把问题拆开，把判断写清楚，把“我试过了”变成“你可以照着做”。所以这里的文章大多从一个具体的错误、一次构建失败，或者一个反复出现的疑问开始。\n我还在学习。文章里会有不成熟的地方，项目也会继续改。如果某篇笔记帮你少踩一个坑，或者某个项目让你想动手做一个自己的版本，这个网站就有用了。\n\n\n\n\n\n\n正在做\n\n\nC++ 学习笔记、Quarto 写作工具、个人网站\n\n\n\n\n常用的\n\n\nC++20、CMake、Python、Git、Quarto、Linux\n\n\n\n\n写作方式\n\n\n先跑通例子，再补解释；能复现的步骤优先\n\n\n\n\n联系\n\n\nhsy13626781560@163.com\n\n\n\n\n其他地方\n\n\nGitHub · RSS\n\n\n\n\n\n\n\n\n“完整”不是“完美”。一个完整的项目通常只需要几样东西：一条能复现的运行路径，一组能说明问题的测试，一份写到别人能上手的说明，以及一个不会在下次修改时立刻崩掉的结构。它们都不难，但需要有人愿意停下来做完。\n我把这个标准用在自己的笔记上。每个 C++ 例子尽量能编译；每篇建站文章尽量说明版本和前置条件；每次发布尽量走同一条流水线。做不到的时候，就在文章里写清楚哪里还没做到。\n\n\n\n网站用 Quarto 构建，主题是在 Bootstrap 之上写的一层 SCSS 和 CSS，没有前端框架，也没有后端。字体自托管，页面由 GitHub Actions 发布到 GitHub Pages。\n它也是 dsh-quarto-website 这个插件的第一个使用者：主题、检查清单和发布流程先在这里跑通，再收回插件里。下次做类似的站点时，不需要从空白页开始。\n\n\n\n\n\n起点\n\n\n\n从环境配置和第一个编译错误开始，把每次卡住的地方记下来。\n\n\n\n\n练习\n\n\n\n用 CMake、CTest 和清晰的目录结构重写小项目，开始在意“别人能不能跑起来”。\n\n\n\n\n现在\n\n\n\n放弃现成模板，改为自定义主题和一条可重复的发布流程，同时把经验收进 DSH 插件。\n\n\n\n\n\n\n\n\n\n01\n\n先跑通，再抽象\n\n能运行的最小版本，比一张完美的架构图更有用。\n\n\n\n\n02\n\n写下来，才算学会\n\n笔记不是摘抄，是一次重新组织，让别人也能照着做。\n\n\n\n\n03\n\n把发布交给机器\n\n构建、检查和部署应该重复、可预期，不靠记忆。\n\n\n\n\n\n如果你也在做类似的事，欢迎写信。聊聊你手上的问题 ↗"
+  },
+  {
+    "objectID": "about/index.html#为什么是做完整",
+    "href": "about/index.html#为什么是做完整",
+    "title": "\n先做完整，再做大。\n",
+    "section": "",
+    "text": "“完整”不是“完美”。一个完整的项目通常只需要几样东西：一条能复现的运行路径，一组能说明问题的测试，一份写到别人能上手的说明，以及一个不会在下次修改时立刻崩掉的结构。它们都不难，但需要有人愿意停下来做完。\n我把这个标准用在自己的笔记上。每个 C++ 例子尽量能编译；每篇建站文章尽量说明版本和前置条件；每次发布尽量走同一条流水线。做不到的时候，就在文章里写清楚哪里还没做到。"
+  },
+  {
+    "objectID": "about/index.html#这个网站怎么来的",
+    "href": "about/index.html#这个网站怎么来的",
+    "title": "\n先做完整，再做大。\n",
+    "section": "",
+    "text": "网站用 Quarto 构建，主题是在 Bootstrap 之上写的一层 SCSS 和 CSS，没有前端框架，也没有后端。字体自托管，页面由 GitHub Actions 发布到 GitHub Pages。\n它也是 dsh-quarto-website 这个插件的第一个使用者：主题、检查清单和发布流程先在这里跑通，再收回插件里。下次做类似的站点时，不需要从空白页开始。"
+  },
+  {
+    "objectID": "about/index.html#一路走来",
+    "href": "about/index.html#一路走来",
+    "title": "\n先做完整，再做大。\n",
+    "section": "",
+    "text": "起点\n\n\n\n从环境配置和第一个编译错误开始，把每次卡住的地方记下来。\n\n\n\n\n练习\n\n\n\n用 CMake、CTest 和清晰的目录结构重写小项目，开始在意“别人能不能跑起来”。\n\n\n\n\n现在\n\n\n\n放弃现成模板，改为自定义主题和一条可重复的发布流程，同时把经验收进 DSH 插件。"
+  },
+  {
+    "objectID": "about/index.html#几条工作原则",
+    "href": "about/index.html#几条工作原则",
+    "title": "\n先做完整，再做大。\n",
+    "section": "",
+    "text": "01\n\n先跑通，再抽象\n\n能运行的最小版本，比一张完美的架构图更有用。\n\n\n\n\n02\n\n写下来，才算学会\n\n笔记不是摘抄，是一次重新组织，让别人也能照着做。\n\n\n\n\n03\n\n把发布交给机器\n\n构建、检查和部署应该重复、可预期，不靠记忆。\n\n\n\n\n\n如果你也在做类似的事，欢迎写信。聊聊你手上的问题 ↗"
+  }
+]
