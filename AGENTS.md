@@ -49,7 +49,7 @@ quarto render        # 构建到 _site/，最后运行 scripts/post-render.mjs
 
 ## 发布
 
-`.github/workflows/publish.yml` 在 push `main` 后构建并发布 `gh-pages`；`_publish.yml` 声明发布目标，本地和 Actions 共用。首次必须在 GitHub **Settings → Pages** 把 Source 切到 `gh-pages`；用户站点默认是 `main`，这是最容易漏的一步。
+`.github/workflows/publish.yml` 在 push `main` 后构建并把 `_site` 推到 `gh-pages`；`_publish.yml` 只供本地 `quarto publish gh-pages` 使用。首次必须在 GitHub **Settings → Pages** 把 Source 切到 `gh-pages`；用户站点默认是 `main`，这是最容易漏的一步。
 
 ## 内容原则
 

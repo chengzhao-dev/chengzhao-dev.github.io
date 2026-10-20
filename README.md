@@ -82,7 +82,7 @@ project:
 
 ## 发布
 
-推送到 `main` 后，GitHub Actions 会渲染并发布到 `gh-pages` 分支。`_publish.yml` 记录发布目标，Actions 和本地 `quarto publish gh-pages` 都读它。
+推送到 `main` 后，GitHub Actions 会渲染并推送 `_site` 到 `gh-pages` 分支。`_publish.yml` 供本地 `quarto publish gh-pages` 使用，Actions 不依赖它。
 
 首次发布后需要在仓库 **Settings → Pages** 把 Source 设为 **Deploy from a branch → gh-pages / (root)**。用户站点默认指向 `main`，不切换会一直显示 README，而不是网站。
 
