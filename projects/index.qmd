@@ -1,6 +1,6 @@
 ---
 pagetitle: "项目"
-description: "正在维护的公开项目：C++ 学习笔记、终端棋盘游戏，以及围绕 DeepSeek Harness 的工具。"
+description: "正在维护的项目：C++ 学习笔记、终端棋盘游戏，以及围绕 DeepSeek Harness 的工具。"
 page-layout: custom
 toc: false
 ---
@@ -37,7 +37,7 @@ toc: false
 
 <p class="cz-project-links"><a href="https://chengzhao-dev.github.io/cpp-notes/">访问站点 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/cpp-notes">源码 <span aria-hidden="true">↗</span></a></p>
 :::
-<div class="cz-project-meta"><span>2024 — 现在</span><span>学习笔记</span></div>
+<div class="cz-project-meta"><span>2026 — 现在</span><span>学习笔记</span></div>
 ::::
 
 :::: {.cz-project}
@@ -54,7 +54,7 @@ toc: false
 
 <p class="cz-project-links"><a href="https://chengzhao-dev.github.io/cpp-board-games/">访问站点 <span aria-hidden="true">↗</span></a><a href="https://github.com/chengzhao-dev/cpp-board-games">源码 <span aria-hidden="true">↗</span></a></p>
 :::
-<div class="cz-project-meta"><span>2025 — 现在</span><span>工程练习</span></div>
+<div class="cz-project-meta"><span>2026 — 现在</span><span>工程练习</span></div>
 ::::
 
 :::: {.cz-project}

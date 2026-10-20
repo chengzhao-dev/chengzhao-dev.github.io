@@ -61,12 +61,12 @@ toc: false
 
 它也是 [dsh-quarto-website](/notes/quarto-personal-website/) 这个插件的第一个使用者：主题、检查清单和发布流程先在这里跑通，再收回插件里。下次做类似的站点时，不需要从空白页开始。
 
-## 时间线
+## 一路走来
 
 <ul class="cz-timeline">
-<li><span class="cz-timeline-year">2024</span><div><h3>开始系统整理 C++ 笔记</h3><p>从环境配置和第一个编译错误开始，把每次卡住的地方记下来。</p></div></li>
-<li><span class="cz-timeline-year">2025</span><div><h3>把练习拆成能维护的工程</h3><p>用 CMake、CTest 和清晰的目录结构重写小项目，开始在意“别人能不能跑起来”。</p></div></li>
-<li><span class="cz-timeline-year">2026</span><div><h3>重做个人网站</h3><p>放弃现成模板，改为自定义主题和一条可重复的发布流程，同时把经验收进 DSH 插件。</p></div></li>
+<li><span class="cz-timeline-year">起点</span><div><h3>开始系统整理 C++ 笔记</h3><p>从环境配置和第一个编译错误开始，把每次卡住的地方记下来。</p></div></li>
+<li><span class="cz-timeline-year">练习</span><div><h3>把练习拆成能维护的工程</h3><p>用 CMake、CTest 和清晰的目录结构重写小项目，开始在意“别人能不能跑起来”。</p></div></li>
+<li><span class="cz-timeline-year">现在</span><div><h3>重做个人网站</h3><p>放弃现成模板，改为自定义主题和一条可重复的发布流程，同时把经验收进 DSH 插件。</p></div></li>
 </ul>
 
 ## 几条工作原则

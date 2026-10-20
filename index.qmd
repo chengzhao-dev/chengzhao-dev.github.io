@@ -21,7 +21,7 @@ toc: false
 <a class="cz-button cz-button-ghost" href="https://github.com/chengzhao-dev" rel="me noopener">GitHub <span aria-hidden="true">↗</span></a>
 </div>
 <dl class="cz-stats">
-<div><dt>06</dt><dd>个公开项目</dd></div>
+<div><dt>06</dt><dd>个项目</dd></div>
 <div><dt>03</dt><dd>篇公开笔记</dd></div>
 <div><dt>2026</dt><dd>开始长期写作</dd></div>
 </dl>
